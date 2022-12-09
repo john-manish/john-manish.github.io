@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="Manish Kumar ">
+<link rel="icon" href="img/favicon.jpg">
+<title>Manish About-Info</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/utils.css">
+<link rel="stylesheet" href="css/about-info.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+</style>
+</head>
+
+
+
+<body class="w3-black" style="margin-top:50px ;">
+
+
+
+  <!-- Sidebar/menu -->
+<nav class=" font3 w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-black w3-large" style="z-index:3; width:250px; font-weight:bold;display:none;right:0;" id="mySidebar">
+  <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32">CLOSE</a> 
+  <a href="blog.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">BLOGS</a> 
+  <a href="Spotify.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">SPOTIFY</a> 
+  <a href="friends.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">FRIENDS</a> 
+  <a href="Gallery.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">GALLERY</a> 
+  <a href="about-cv.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">ABOUT ME</a> 
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CONTACT</a>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-white w3-xlarge w3-padding-10">
+  <span class=" font3 w3-left w3-padding">Manish Kumar</span>
+  <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+
+
+
+
+
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <img src="mk-Images/manish-short.jpg" style="width:100% ; margin-top: 5px;" >
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>ABOUT</p>
+  </a>
+  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-eye w3-xxlarge"></i>
+    <p>PHOTOS</p>
+  </a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>CONTACT</p>
+  </a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" style="margin-top:55px ;" id="myNavbar">
+  <div class="w3-bar w3-navblack w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Manish Kumar.</h1>
+    <p>A student And An Indian Citizen.</p><br>
+    <img src="mk-Images/manish-short.jpg" alt="boy" class="w3-image" width="992" height="1108">
+  </header>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-16" id="about">
+    <h2 class="w3-text-light-grey"> Manish Kumar </h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>I'm Manish Kumar. I'm 16. i'm A Student, An Ambidextrous , An Introvert ...
+    </p>
+    <h3 class="w3-padding-16 w3-text-light-grey">My Hobbies</h3>
+    <p class="w3-wide">Coding/Web Design</p>
+    <div class="w3-white">
+      <div class="w3-container w3-padding-small w3-center w3-dark-grey" style="height:28px;width:30%">30%</div>
+    </div>
+    <p class="w3-wide">Diary Writing</p>
+    <div class="w3-white">
+      <div class="w3-container w3-padding-small w3-center w3-dark-grey" style="height:28px;width:50%">50%</div>
+    </div>
+    <p class="w3-wide">Listening Songs</p>
+    <div class="w3-white">
+      <div class="w3-container w3-padding-small w3-center w3-dark-grey" style="height:28px;width:40%">40%</div>
+    </div>
+    <br>
+    
+    <h3 class="w3-padding-16 w3-text-light-grey"> Religion Faith</h3>
+    <p class="w3-wide">Hinduism</p>
+    <div class="w3-white">
+      <div class="w3-container w3-padding-small w3-center w3-dark-grey" style="height:28px;width:50%">50%</div>
+    </div>
+    <p class="w3-wide">Buddhism</p>
+    <div class="w3-white">
+      <div class="w3-container w3-padding-small w3-center w3-dark-grey" style="height:28px;width:90%">90%</div>
+    </div>
+    
+    <br>
+
+
+    <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">11+</span><br>
+        Class
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">3+</span><br>
+        Projects Done
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">Maths</span><br>
+        Fav Sub
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">Buddhism</span><br>
+        Fav Religion
+      </div>
+    </div>
+
+    <a href="resources/resume.pdf"><button class="w3-button w3-light-grey w3-padding-large w3-section">
+      <i class="fa fa-download"></i> Download Resume
+    </button>
+    </a>
+   
+
+      
+   
+    
+    <!-- Testimonials -->
+    <h3 class="w3-padding-24 w3-text-light-grey">My Schools</h3>  
+    <img src="img/vibrant.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:100px" height="80px">
+    <p><span class="w3-large w3-margin-right"></span> Vibrant Prep Public School </p>
+    <p>Student</p><br><br>
+    
+    <img src="img/ns dav.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:100px" height="100px">
+    <p><span class="w3-large w3-margin-right"></span> NS DAV Public School</p>
+    <p>Student</p>
+  <!-- End About Section -->
+  </div>
+  
+  <!-- Portfolio Section -->
+  <div class="w3-padding-64 w3-content" id="photos">
+    <h2 class="w3-text-light-grey">My Photos</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <!-- Grid for photos -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+        <img src="mk-Images/manish1.jpg" style="width:100%">
+        <img src="mk-Images/20221016_164001.jpg" style="width:100%">
+        <img src="mk-Images/20221016_164851.jpg" style="width:100%">
+      </div>
+
+      <div class="w3-half">
+        <img src="mk-Images/20221114_174105.jpg" style="width:100%">
+        <img src="mk-Images/manish-short.jpg" style="width:100%">
+        <img src="mk-Images/manish2.jpg" style="width:100%">
+        <img src="img/child group photo.jpg" style="width:100%">
+      </div>
+    <!-- End photo grid -->
+    </div>
+  <!-- End Portfolio Section -->
+  </div>
+
+
+ <!-- Contact Section -->
+ <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Sitamarhi,Bihar, India</p>
+      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +918440825316</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: john.manish8090@gmail.com</p>
+    </div><br>
+   
+
+   <a href="master/contact.html"> <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+      <i class="fa fa-paper-plane"></i> SEND MESSAGE [ Diff.  Contact Options ]
+    </button></a>
+    
+  
+  <!-- End Contact Section -->
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Footer -->
+
+        <div class="footer">
+            <ul class="copyright">
+                <li>&copy; 2022 Manish (Ms1319-js)</li>
+            </ul>
+        </div>
+
+  <!-- End footer -->
+  </footer>
+
+<!-- END PAGE CONTENT -->
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+  // Script to open and close sidebar
+  function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+  
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  
+  // Modal Image Gallery
+  function onClick(element) {
+    document.getElementById("img01").src = element.src;
+    document.getElementById("modal01").style.display = "block";
+    var captionText = document.getElementById("caption");
+    captionText.innerHTML = element.alt;
+  }
+  
+  </script>
+  
+
+
+
+
+
+
+
+</body>
+</html>

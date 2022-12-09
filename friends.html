@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="generator" content="Manish Kumar ">
+<link rel="icon" href="img/favicon.jpg">
+<title>Manish -- Friends</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="master/nicestyle.css" media="screen">
+<link rel="stylesheet" href="master/Contact.css" media="screen">
+    <script class="u-script" type="text/javascript" src="master/jquery-1.9.1.min.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="master/style.js" defer=""></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.w3-quarter img{margin-bottom: -6px; cursor: pointer}
+.w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
+</style>
+</head>
+<body class="w3-light-grey">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large" style="z-index:3;width:250px;font-weight:bold;display:none;right:0;" id="mySidebar">
+  <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32">CLOSE</a> 
+  <a href="blog.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">BLOGS</a> 
+  <a href="Spotify.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">SPOTIFY</a> 
+  <a href="Gallery.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">GALLERY</a> 
+  <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">FRIENDS</a> 
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">ABOUT ME</a> 
+  <a href="master/contact.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CONTACT</a>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
+  <span class="w3-left w3-padding">FRIENDS</span>
+  <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content" style="max-width:1600px;margin-top:83px">
+  
+  <!-- Photo grid -->
+  <div class="w3-row w3-grayscale-min">
+    <div class="w3-quarter">
+      <img src="friends-img/govind1.jpg" style="width:100%" onclick="onClick(this)" alt="Govind -- DAV">
+      <img src="friends-img/shivam.jpg" style="width:100%" onclick="onClick(this)" alt="Shivam -- DAV">
+      <img src="friends-img/rohitcropped.jpg" style="width:100%" onclick="onClick(this)" alt="Rohit -- DAV">
+      <img src="friends-img/mayank.jpg" style="width:100%" onclick="onClick(this)" alt="Mayank -- DAV">
+   </div>
+    
+   <div class="w3-quarter">
+    <img src="friends-img/abhishek.jpg" style="width:100%" onclick="onClick(this)" alt="Abhishek -- VIBRANT PREP SCHOOL">
+    <img src="friends-img/navneet.jpg" style="width:100%" onclick="onClick(this)" alt="navneet -- VIBRANT PREP SCHOOL">
+    <img src="friends-img/deepak1.jpg" style="width:100%" onclick="onClick(this)" alt="deepak1 -- VIBRANT PREP SCHOOL">
+    <img src="friends-img/saurabh-yadav.jpg" style="width:100%" onclick="onClick(this)" alt="saurabh-yadav -- VIBRANT PREP SCHOOL">
+  </div>
+
+  <div class="w3-quarter">
+      <img src="friends-img/sonu-singh.jpg" style="width:100%" onclick="onClick(this)" alt="sonu-singh -- VIBRANT PREP SCHOOL">
+      <img src="friends-img/kanish.jpg" style="width:100%" onclick="onClick(this)" alt="kanish -- VIBRANT PREP SCHOOL">
+      <img src="friends-img/piyush1.jpg" style="width:100%" onclick="onClick(this)" alt="piyush1 -- VIBRANT PREP SCHOOL">
+      <img src="friends-img/nitesh.jpg" style="width:100%" onclick="onClick(this)" alt="nitesh -- VIBRANT PREP SCHOOL">
+    </div>
+
+   <div class="w3-quarter">
+      <img src="friends-img/mreenal.jpg" style="width:100%" onclick="onClick(this)" alt="abhinav-krishna -- DAV">
+      <img src="friends-img/Utsav1.jpg" style="width:100%" onclick="onClick(this)" alt="Utsav1 -- DAV">
+      <img src="friends-img/rivesh.jpg" style="width:100%" onclick="onClick(this)" alt="rivesh -- DAV">
+      <img src="friends-img/yuvraj.jpg" style="width:100%" onclick="onClick(this)" alt="yuvraj -- DAV">
+    </div>
+    
+
+
+  </div>
+
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+      <a href="friends2.html" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+    </div>
+  </div>
+  
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- About section -->
+  <div class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32" id="about">
+    <h4><b>About Me</b></h4>
+    <img src="mk-Images/manish-short.jpg" alt="Me" class="w3-image-border" width="600" height="650">
+    <div class="w3-content w3-justify" style="max-width:600px">
+      <h4>Manish Kumar</h4>
+      <p>I'm Manish Kumar. I'm 16. i'm A Student, An Ambidextrous , An Introvert ...
+    </p>
+      <p>mail : &nbsp; john.manish8090@gmail.com</p>
+      <p>tel : &nbsp; +918440825316</p>
+      <hr class="w3-opacity">
+      <h4 class="w3-padding-16">My Hobbies</h4>
+      <p class="w3-wide">Coding/Web Design</p>
+      <div class="w3-white">
+        <div class="w3-container w3-padding-small w3-center w3-grey" style="width:30%">30%</div>
+      </div>
+      <p class="w3-wide">Diary Writing</p>
+      <div class="w3-white">
+        <div class="w3-container w3-padding-small w3-center w3-grey" style="width:50%">50%</div>
+      </div>
+      <p class="w3-wide">Listening Songs</p>
+      <div class="w3-white">
+        <div class="w3-container w3-padding-small w3-center w3-grey" style="width:50%">50%</div>
+      </div><br>
+
+      <h4 class="w3-padding-16">Religion Faith</h4>
+      <p class="w3-wide">Hinduism</p>
+      <div class="w3-white">
+        <div class="w3-container w3-padding-small w3-center w3-grey" style="width:30%">50%</div>
+      </div>
+      <p class="w3-wide">Buddhism</p>
+      <div class="w3-white">
+        <div class="w3-container w3-padding-small w3-center w3-grey" style="width:90%">90%</div>
+      </div>
+
+
+
+      <p>
+        <a href="resources/resume.pdf">
+        <button class="w3-button w3-light-grey w3-padding-large w3-margin-top w3-margin-bottom w3-hover-black">Download Resume</button>
+        </a>
+    </p>
+      <hr class="w3-opacity">
+
+      
+     
+    </div>
+  </div>
+
+  
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-32 w3-grey">  
+    <div class="w3-row-padding">
+      <div class="w3-third">
+        <h3>INFO</h3>
+        <p>Myself Manish Kumar. I'm A Student </p>      
+      </div>
+    
+      <div class="w3-third">
+        <h3>BLOG POSTS</h3>
+        <ul class="w3-ul">
+          <li class="w3-padding-16 w3-hover-black">
+            <img src="img/vibrant.jpg" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">VIBRANT PREP SCHOOL MEMORIES</span><br>
+            <span>28 Oct 22 | 6 min read</span>
+          </li>
+          <li class="w3-padding-16 w3-hover-black">
+            <img src="img/ns dav.jpg" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">My School Life Comes TO An End</span><br>
+            <span>17 Nov 22 | 6 min read</span>
+          </li> 
+        </ul>
+      </div>
+
+      <div class="w3-third">
+        <h3>BLOG POSTS</h3>
+        <ul class="w3-ul">
+          <li class="w3-padding-16 w3-hover-black">
+            <img src="img/old ns dav.png" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">My Last Day In Ns Dav School</span><br>
+            <span>17 Nov 22 | 6 min read</span>
+          </li>
+          <li class="w3-padding-16 w3-hover-black">
+            <img src="img/africa.jpg" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">WATER SCARCITY IN AFRICA </span><br>
+            <span> 14 June 22 | 6 min read</span>
+          </li> 
+        </ul>
+
+      </div>
+    </div>
+  </footer>
+  
+  <div class=" w3-black w3-center w3-padding-24">copyright <a href="https://john-manish.github.io" title="2022 Manish (john)" target="_blank" class="w3-hover-opacity">2022 Manish (john)</a></div>
+
+<!-- End page content -->
+</div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+</script>
+
+
+</body>
+</html>
