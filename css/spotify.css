@@ -1,0 +1,155 @@
+html {
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	color: #333;
+	background-image: url("files/bg0.png");
+	background-repeat: repeat-y;
+	background-position: right top;
+	background-attachment: fixed;
+	background-size: cover;
+
+}
+
+.header {
+
+	/* padding: 0.7ex 0.7ex 0.7ex 2em; */
+	text-align:  left;
+	padding: 1em 2em;
+	background: rgba(50,50,50,0.9);
+	border: dashed 2px ;
+	border-color: cadetblue;
+	border-radius: 10px;
+
+}
+
+
+
+
+@font-face {font-family: ArgentPixelCF-Regular; src: url("files/ArgentPixelCF-Regular.otf"); }
+body {
+		font-size: large;
+
+	font-family: monospace;
+	/* background: linear-gradient(indigo, darkslategray) fixed ; */
+	/* background: powderblue ; */
+}
+
+main {
+		margin: 10px 0px 10px 0px;
+
+	padding: 1em 2em;
+	background: rgba(50,50,50,0.9);
+	border: dashed 2px ;
+	border-color: cadetblue;
+	border-radius: 10px;
+
+
+}
+
+
+
+h1, h2, h3, strong {color:rgb(8, 45, 124); font-family: ArgentPixelCF-Regular, sans-serif; }
+h2 { padding: 10px 10px 0px 0px; margin: 0px;}
+update, strong, sup {color: rgb(196, 36, 36); }
+li, p, ul {color: rgb(81, 2, 2); }
+z {color: deepskyblue; font-family: ArgentPixelCF-Regular;}
+a {color: rgb(3, 28, 37); }
+a:hover {color: lightseagreen; }
+
+
+/* Style page content */
+
+
+#todo {
+	height:200px;
+
+	overflow: auto;
+	border: dashed 2px;
+	border-color: rgb(1, 17, 26);
+	border-radius: 7px;
+	padding: 1.5em;
+	margin: 20px 10px 10px 10px;
+}
+
+
+#todo1 {
+	height:400px;
+
+	overflow: auto;
+	border: dashed 2px;
+	border-color: rgb(77, 8, 8);
+	border-radius: 7px;
+	padding: 0.8em;
+	margin: 20px 10px 10px 10px;
+}
+
+
+.heading-adjust-mk {
+   font-family: var(--font3);
+    margin-left: 20px;
+
+}
+
+
+/* ENTRY CSS */
+.entry {
+	border-left: 10px solid rgb(79, 57, 47);
+	padding: 0px 10px 0px 10px;
+	border-radius: 0 30px 30px 0;
+	margin-bottom: 20px;
+	background-color: lightblue;
+	}
+
+.entry h2 { margin: 5px auto 2px auto; color: #222222; padding: 10px 10px 0px 0px;}
+.entry a {color: midnightblue;}
+.entry a:hover {color: turquoise;}
+.entry strong {color:black;}
+
+.bindex {
+}
+
+#footer{
+	margin-top: 10px;
+	text-align: center;
+	padding: 1em 2em;
+	background: rgba(12, 12, 12, 0.9);
+	border: dashed 2px ;
+	border-color: cadetblue;
+	border-radius: 10px;
+
+
+}
+
+
+#imz{
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	border: dashed 2px;
+	border-color: lightskyblue;
+	border-radius: 7px;
+}
+/*  */
+/* For TAGLIST.HTML */
+.taglist {
+	text-align: center ;
+	clear: both ;
+}
+
+/* For NEXTPREV.HTML */
+#nextprev {
+	/* The container for both the previous and next articles. */
+}
+#prevart {
+	float: left ;
+	text-align: left ;
+}
+#nextart {
+	float: right ;
+	text-align: right ;
+}
+#nextart,#prevart {
+	max-width: 33% ;
+}

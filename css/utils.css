@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Boogaloo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
+
+:root { 
+  --main-bg-color: #bd6418;
+  --font1: "Baloo Bhaina 2", cursive;
+  --font2: "Roboto", sans-serif;
+  --font12: "Source Sans Pro", sans-serif;
+  --font3: "Kalam", cursive ;
+  --font4: "Covered By Your Grace", cursive;
+  --font5: "Finger Paint", cursive;
+  --font6: "Faster One", cursive;
+  --font7: "Vast Shadow", cursive;
+  --font8: "Caveat Brush", cursive;
+  --font9: "Boogaloo", cursive;
+  --font10: "Rancho", cursive;
+  --font11: "Niconne", cursive;
+}
+
+@font-face{
+  font-family: japanesefont;
+  src: url(JapaneseRobotItalic-owwXz.ttf)
+}
+
+.center{
+  text-align: center
+}
+
+.font1 {
+  font-family: var(--font1);
+}
+.font2 {
+  font-family: var(--font2);
+}
+.font3 {
+  font-family: var(--font3);
+}
+.font4 {
+  font-family: var(--font4);
+}
+.font5 {
+  font-family: var(--font5);
+}
+.font6 {
+  font-family: var(--font6);
+}
+.font7 {
+  font-family: var(--font7);
+}
+.font8 {
+  font-family: var(--font8);
+}
+.font9 {
+  font-family: var(--font9);
+}
+.font10 {
+  font-family: var(--font10);
+}
+.font11 {
+  font-family: var(--font11);
+}
+
+.font12 {
+  font-family: var(--font12);
+ font-weight: 400;
+}
+
+
+@supports (font-variation-settings: "wght" 350) {
+    * {
+      font-family: var(--font12);
+      font-weight: 350;
+    }
+  }
+
+
+.font13 {
+ font-family: var(--font12);
+ font-weight: 400;
+}
+
+
+.fontjapan {
+  font-family: japanesefont;
+}
+
+
+.max-width-1 {
+  max-width: 80vw;
+}
+
+.max-width-2 {
+  max-width: 80vw;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.my-1{
+  margin-left: 23px;
+  margin-right: 23px;
+}
+
+.my-2{
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.btn {
+  padding: 0px 20px;
+  padding-top: 3px;
+  border: 2px solid black;
+  border-radius: 6px;
+  font-family: var(--font1);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  color: white;
+  background: var(--main-bg-color);
+}
+
+.form-input {
+  padding: 0px 5px;
+  padding-top: 3px;
+  font-size: 16px;
+  border: 2px solid black;
+  border-radius: 4px;
+  margin: 0 13px;
+  font-family: var(--font1);
+}
+
+.form-box input, textarea{
+  width: 52vw;
+  padding: 0px 6px;
+  margin: 7px 0;
+  font-size: 18px;
+  font-family: var(--font1);
+  border: 2px solid var(--main-bg-color);
+    border-radius: 5px;
+}
