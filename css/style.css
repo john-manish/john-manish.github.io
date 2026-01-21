@@ -272,23 +272,38 @@ mark {
 
 
 
+/* 🔒 FORCE results layout */
 .results-layout {
-  display: flex;
+  display: flex !important;
+  align-items: flex-start;
+  justify-content: space-between;
   gap: 40px;
 }
 
+/* LEFT column */
 .results-left {
   flex: 1;
 }
 
+/* RIGHT column */
 .results-right {
-  width: 220px;
+  width: 240px;
   text-align: right;
+  margin-left: auto;   /* 🔥 THIS pushes it to the right */
 }
 
+/* Clear button */
 .results-right .clear-btn {
-  margin-bottom: 12px;
-  width: 100%;
+  display: block;
+  margin: 0 0 12px auto; /* right aligned */
 }
+
+/* Cancel any floats */
+.results-right,
+.results-right * {
+  float: none !important;
+}
+
+
 
 
