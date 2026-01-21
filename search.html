@@ -137,17 +137,27 @@
   const resultCount = document.getElementById("resultCount");
 
   if (query) {
+    const lowerQuery = query.toLowerCase();
     title.innerText = `Search Results for "${query}"`;
 
     let count = 0;
-    noResult.style.display = "none"; // ✅ RESET FIRST
+    noResult.style.display = "none";
 
     articles.forEach(article => {
-      const text = article.dataset.title;
+      const titleEl = article.querySelector("h3");
+      const originalText = titleEl.innerText;
+      const lowerText = originalText.toLowerCase();
 
-      if (text.includes(query.toLowerCase())) {
+      // reset title first (important)
+      titleEl.innerHTML = originalText;
+
+      if (lowerText.includes(lowerQuery)) {
         article.style.display = "flex";
         count++;
+
+        // 🔦 highlight match
+        const regex = new RegExp(`(${query})`, "gi");
+        titleEl.innerHTML = originalText.replace(regex, "<mark>$1</mark>");
       } else {
         article.style.display = "none";
       }
@@ -159,7 +169,6 @@
       noResult.style.display = "block";
     }
   }
-
           
   // document.getElementById("searchBox")?.focus();
 
@@ -169,6 +178,7 @@
 ---------------------        
 </body>
 </html>
+
 
 
 
