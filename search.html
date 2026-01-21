@@ -241,13 +241,20 @@
 
 
         
- 
+ <script>
+  function resetSearch() {
+    history.replaceState(null, "", window.location.pathname);
+    location.reload();
+  }
+</script>
+
 
       
         
 ---------------------        
 </body>
 </html>
+
 
 
 
