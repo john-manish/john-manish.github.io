@@ -61,19 +61,34 @@
     <div class="max-width-1 m-auto"><hr></div>
     <div class="home-articles max-width-1 m-auto font2">
         
-        <h3>Search Results Feature Is Not Coded Yet , So its Not Available Right Now ! </h3>
-        <div class="year-box adjust-year">
-            <div>
-                <h3>Year </h3>
-            </div>
-            <div>
-                <input type="radio" name="year" id=""> 2020
-            </div>
-            <div>
-                <input type="radio" name="year" id=""> 2021
-            </div>
-        </div>
-        <div class="home-article">
+       <h3 id="searchTitle">Search Results</h3>
+        <p id="resultCount"></p>
+
+<p id="noResult" style="display:none;"> No results found. Try a different keyword.</p>
+
+
+        
+       <div class="year-box adjust-year">
+  <h3>Year</h3>
+
+  <label>
+    <input type="radio" name="year" value="all" checked> All
+  </label>
+
+  <label>
+    <input type="radio" name="year" value="2020"> 2020
+  </label>
+
+  <label>
+    <input type="radio" name="year" value="2021"> 2021
+  </label>
+
+  <label>
+    <input type="radio" name="year" value="2022"> 2022
+  </label>
+</div>
+
+        <div class="home-article" data-title="my school life comes to an end" data-year="2021">
             <div class="home-article-img">
                 <a href="blogpost.html"> <img src="img/ns dav.jpg" alt="article"> </a>
             </div>
@@ -86,7 +101,7 @@
                 <span>17 Nov 22 | 6 min read</span>
             </div>
         </div>
-        <div class="home-article">
+        <div class="home-article" data-title="my last day of ns dav school"  data-year="2021">
             <div class="home-article-img">
                 <a href="last day of dav.html"> <img src="img/old ns dav.png" alt="article"> </a>
             </div>
@@ -99,7 +114,7 @@
                 <span>17 Nov 22 | 6 min read</span>
             </div>
         </div>
-        <div class="home-article">
+        <div class="home-article" data-title="vibrant preparatory school memories" data-year="2020">
             <div class="home-article-img">
                 <a href="Vibrant.html"> <img src="img/vibrant.jpg" alt="article"></a>
             </div>
@@ -120,5 +135,108 @@
         </ul>
          <a href="https://www.vecteezy.com/free-vector/typewriter">Vector Credits: Vecteezy</a> 
     </div>
+
+---------------------
+        
+      <script>
+  const params = new URLSearchParams(window.location.search);
+  const query = params.get("query");
+
+  const articles = document.querySelectorAll(".home-article");
+  const title = document.getElementById("searchTitle");
+  const noResult = document.getElementById("noResult");
+  const resultCount = document.getElementById("resultCount");
+
+  if (query) {
+    const lowerQuery = query.toLowerCase();
+    title.innerText = `Search Results for "${query}"`;
+
+    let count = 0;
+    noResult.style.display = "none";
+
+    articles.forEach(article => {
+      const titleEl = article.querySelector("h3");
+      const originalText = titleEl.innerText;
+      const lowerText = originalText.toLowerCase();
+
+      // reset title first (important)
+      titleEl.innerHTML = originalText;
+
+      if (lowerText.includes(lowerQuery)) {
+        article.style.display = "flex";
+        count++;
+
+        // 🔦 highlight match
+        const regex = new RegExp(`(${query})`, "gi");
+        titleEl.innerHTML = originalText.replace(regex, "<mark>$1</mark>");
+      } else {
+        article.style.display = "none";
+      }
+    });
+
+    resultCount.innerText = count + " result(s) found";
+
+    if (count === 0) {
+      noResult.style.display = "block";
+    }
+  }
+          
+  // document.getElementById("searchBox")?.focus();
+
+          
+</script>
+
+
+<script>
+  const yearRadios = document.querySelectorAll('input[name="year"]');
+
+  function applyYearFilter() {
+    const selectedYear =
+      document.querySelector('input[name="year"]:checked')?.value || "all";
+
+    document.querySelectorAll(".home-article").forEach(article => {
+      const articleYear = article.dataset.year;
+
+      if (selectedYear === "all" || articleYear === selectedYear) {
+        article.style.display = "flex";
+      } else {
+        article.style.display = "none";
+      }
+    });
+  }
+
+  yearRadios.forEach(radio =>
+    radio.addEventListener("change", applyYearFilter)
+  );
+</script>
+
+
+
+        
+<script>
+ 
+
+    // show all articles
+    document.querySelectorAll(".home-article").forEach(article => {
+      article.style.display = "flex";
+    });
+
+    // reset year to "All"
+    const allYear = document.querySelector('input[name="year"][value="all"]');
+    if (allYear) allYear.checked = true;
+
+    // clear result text
+    const title = document.getElementById("searchTitle");
+    const count = document.getElementById("resultCount");
+    const noResult = document.getElementById("noResult");
+
+    if (title) title.innerText = "Search Results";
+    if (count) count.innerText = "";
+    if (noResult) noResult.style.display = "none";
+  });
+</script>
+
+
 </body>
 </html>
+
