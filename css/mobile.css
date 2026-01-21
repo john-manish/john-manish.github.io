@@ -182,6 +182,19 @@ font-size: 12px;
     right: 12px;
   }
 
+  
+/* New */
+.clear-filter-box button {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+
+.year-box {
+    margin-top: 20px;
+  }
+  
+  
   /* Reset year box positioning on mobile */
   .year-box {
     position: static;
@@ -202,6 +215,7 @@ font-size: 12px;
     font-size: 14px;
   }
 }
+
 
 
 
