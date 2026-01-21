@@ -47,33 +47,29 @@ img {margin-bottom: -7px}
 </div>
 
 <!-- Photo Grid -->
-<div class="w3-row" id="myGrid" style="margin-bottom:128px">
-  <div class="w3-third">
-    <img src="manish-img/manish1.jpg" style="width:100%">
-    <img src="manish-img/manish2.jpg" style="width:100%">
-    <img src="manish-img/manish3.jpg" style="width:100%">
-    <img src="manish-img/manish4.jpg" style="width:100%">
-    <img src="manish-img/manish5.jpg" style="width:100%">
-    <img src="manish-img/manish6.jpg" style="width:100%">
-  </div>
+<style>
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 6px;
+  padding: 8px;
+}
 
-  <div class="w3-third">
-    <img src="manish-img/manish7.jpg" style="width:100%">
-    <img src="manish-img/manish8.jpg" style="width:100%">
-    <img src="manish-img/manish9.jpg" style="width:100%">
-    <img src="manish-img/manish10.jpg" style="width:100%">
-    <img src="manish-img/manish11.jpg" style="width:100%">
-    <img src="manish-img/manish12.jpg" style="width:100%">
-  </div>
+.gallery img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+</style>
 
-  <div class="w3-third">
-    <img src="manish-img/manish13.jpg" style="width:100%">
-    <img src="manish-img/manish14.jpg" style="width:100%">
-    <img src="manish-img/manish15.jpg" style="width:100%">
-    <img src="manish-img/manish16.jpg" style="width:100%">
-    <img src="manish-img/manish17.jpg" style="width:100%">
-    <img src="manish-img/manish18.jpg" style="width:100%">
-  </div>
+<div class="gallery">
+  <img src="manish-img/manish1.jpg" loading="lazy">
+  <img src="manish-img/manish2.jpg" loading="lazy">
+  <img src="manish-img/manish3.jpg" loading="lazy">
+  <img src="manish-img/manish4.jpg" loading="lazy">
+  <img src="manish-img/manish5.jpg" loading="lazy">
+  <img src="manish-img/manish6.jpg" loading="lazy">
 </div>
 
 <!-- End Page Content -->
@@ -114,4 +110,5 @@ function w3_close() {
 </script>
 
 </body>
+
 </html>
