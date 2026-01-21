@@ -127,47 +127,49 @@
 
 -------------------
         
-        <script>
+      <script>
   const params = new URLSearchParams(window.location.search);
   const query = params.get("query");
 
   const articles = document.querySelectorAll(".home-article");
   const title = document.getElementById("searchTitle");
   const noResult = document.getElementById("noResult");
+  const resultCount = document.getElementById("resultCount");
 
   if (query) {
     title.innerText = `Search Results for "${query}"`;
-    let found = false;
 
-   let count = 0;
+    let count = 0;
+    noResult.style.display = "none"; // ✅ RESET FIRST
 
-articles.forEach(article => {
-  if (article.dataset.title.includes(query.toLowerCase())) {
-    article.style.display = "flex";
-    count++;
-  } else {
-    article.style.display = "none";
-  }
-});
+    articles.forEach(article => {
+      const text = article.dataset.title;
 
-document.getElementById("resultCount").innerText =
-  count + " result(s) found";
+      if (text.includes(query.toLowerCase())) {
+        article.style.display = "flex";
+        count++;
+      } else {
+        article.style.display = "none";
+      }
+    });
 
+    resultCount.innerText = count + " result(s) found";
 
-    if (!found) {
+    if (count === 0) {
       noResult.style.display = "block";
     }
   }
 
+          
+  document.getElementById("searchBox")?.focus();
 
-             document.getElementById("searchBox")?.focus();
-
-            
+          
 </script>
         
 ---------------------        
 </body>
 </html>
+
 
 
 
