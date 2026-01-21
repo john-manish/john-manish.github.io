@@ -86,6 +86,24 @@ if (sessionStorage.getItem("auth") !== "yes") {
 <!-- End Page Content -->
 </div>
 
+
+<!-- Logout -->
+<button onclick="logout()" style="
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+">
+Logout
+</button>
+
+  
+
 <!-- Footer -->
 <footer class="w3-container w3-padding-10 w3-black w3-center  w3-xlarge" style="margin-top:128px"> 
      <a href="https://ms1319js.github.io"><i class="fa fa-globe mk-hover-opacity"></i></a>
@@ -120,9 +138,17 @@ function w3_close() {
 }
 </script>
 
+  <script>
+function logout() {
+  sessionStorage.removeItem("auth");
+  window.location.href = "pass.html";
+}
+  </script>
+
 </body>
 
 </html>
+
 
 
 
