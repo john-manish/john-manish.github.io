@@ -187,13 +187,12 @@
 
 <script>
   const yearRadios = document.querySelectorAll('input[name="year"]');
-  const articles = document.querySelectorAll(".home-article");
 
   function applyYearFilter() {
     const selectedYear =
       document.querySelector('input[name="year"]:checked')?.value || "all";
 
-    articles.forEach(article => {
+    document.querySelectorAll(".home-article").forEach(article => {
       const articleYear = article.dataset.year;
 
       if (selectedYear === "all" || articleYear === selectedYear) {
@@ -210,11 +209,13 @@
 </script>
 
 
+
         
         
 ---------------------        
 </body>
 </html>
+
 
 
 
