@@ -61,7 +61,9 @@
     <div class="max-width-1 m-auto"><hr></div>
     <div class="home-articles max-width-1 m-auto font2">
         
-        <h3>Search Results Feature Is Not Coded Yet , So its Not Available Right Now ! </h3>
+        <h3 id="searchTitle">Search Results</h3>
+<p id="noResult" style="display:none;">No matching articles found.</p>
+
         <div class="year-box adjust-year">
             <div>
                 <h3>Year </h3>
@@ -73,7 +75,7 @@
                 <input type="radio" name="year" id=""> 2021
             </div>
         </div>
-        <div class="home-article">
+        <div class="home-article" data-title="my school life comes to an end">
             <div class="home-article-img">
                 <a href="blogpost.html"> <img src="img/ns dav.jpg" alt="article"> </a>
             </div>
@@ -86,7 +88,7 @@
                 <span>17 Nov 22 | 6 min read</span>
             </div>
         </div>
-        <div class="home-article">
+        <div class="home-article" data-title="my last day of ns dav school">
             <div class="home-article-img">
                 <a href="last day of dav.html"> <img src="img/old ns dav.png" alt="article"> </a>
             </div>
@@ -99,7 +101,7 @@
                 <span>17 Nov 22 | 6 min read</span>
             </div>
         </div>
-        <div class="home-article">
+        <div class="home-article" data-title="vibrant preparatory school memories">
             <div class="home-article-img">
                 <a href="Vibrant.html"> <img src="img/vibrant.jpg" alt="article"></a>
             </div>
@@ -120,5 +122,39 @@
         </ul>
          <a href="https://www.vecteezy.com/free-vector/typewriter">Vector Credits: Vecteezy</a> 
     </div>
+
+-------------------
+        
+        <script>
+  const params = new URLSearchParams(window.location.search);
+  const query = params.get("query");
+
+  const articles = document.querySelectorAll(".home-article");
+  const title = document.getElementById("searchTitle");
+  const noResult = document.getElementById("noResult");
+
+  if (query) {
+    title.innerText = `Search Results for "${query}"`;
+    let found = false;
+
+    articles.forEach(article => {
+      const text = article.dataset.title;
+      if (text.includes(query.toLowerCase())) {
+        article.style.display = "flex";
+        found = true;
+      } else {
+        article.style.display = "none";
+      }
+    });
+
+    if (!found) {
+      noResult.style.display = "block";
+    }
+  }
+</script>
+        
+-------------------
+        
 </body>
 </html>
+
