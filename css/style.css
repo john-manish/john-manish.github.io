@@ -272,25 +272,19 @@ mark {
 
 
 
-/* Right-side filter panel */
-.results-right {
-  float: right;            /* 🔥 key fix */
-  width: 220px;
-  margin-left: 30px;
-  text-align: right;
+/* Anchor container */
+.home-articles {
+  position: relative;
 }
 
-/* Clear button */
-.results-right .clear-btn {
-  display: block;
-  margin-bottom: 12px;
-  width: 100%;
+/* Clear Filters button – fixed to right side of results area */
+.clear-btn {
+  position: absolute;
+  top: 20px;          /* adjust vertically if needed */
+  right: 0;           /* RIGHT SIDE */
+  z-index: 10;
 }
 
-/* Prevent text/image collapse */
-.home-article {
-  overflow: hidden;
-}
 
 
 
