@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Protected Gallery</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: system-ui, sans-serif;
+  color: white;
+}
+
+.box {
+  text-align: center;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>Enter Password</h2>
+  <input type="password" id="pass" placeholder="Password">
+  <br>
+  <button onclick="check()">Unlock</button>
+  <p id="msg"></p>
+</div>
+
+<script>
+const PASSWORD = "manish8090";
+
+if (sessionStorage.getItem("auth") === "yes") {
+  window.location.href = "gallery.html";
+}
+
+function check() {
+  const input = document.getElementById("pass").value;
+  if (input === PASSWORD) {
+    sessionStorage.setItem("auth", "yes");
+    window.location.href = "gallery.html";
+  } else {
+    document.getElementById("msg").innerText = "Wrong password";
+  }
+}
+</script>
+
+</body>
+</html>
