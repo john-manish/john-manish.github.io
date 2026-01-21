@@ -49,7 +49,7 @@
         </div>
         <div class="nav-right">
             <form action="search.html" method="get">
-                <input class="form-input" type="text" name="query" placeholder="Article Search">
+                <input id="searchBox" class="form-input" type="text" name="query" placeholder="Article Search">
                 <button class="btn">Search</button>
             </form>
 
@@ -151,10 +151,18 @@
       noResult.style.display = "block";
     }
   }
+
+---------------------
+        document.getElementById("searchBox")?.focus();
+---------------------
+            
 </script>
         
--------------------
+---------------------
+        document.getElementById("searchBox")?.focus();
+---------------------
         
 </body>
 </html>
+
 
