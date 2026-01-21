@@ -66,18 +66,27 @@
 
 <p id="noResult" style="display:none;"> No results found. Try a different keyword.</p>
 
-        <div class="year-box adjust-year">
-            <div>
-                <h3>Year </h3>
-            </div>
-            <div>
-                <input type="radio" name="year" id=""> 2020
-            </div>
-            <div>
-                <input type="radio" name="year" id=""> 2021
-            </div>
-        </div>
-        <div class="home-article" data-title="my school life comes to an end">
+       <div class="year-box adjust-year">
+  <h3>Year</h3>
+
+  <label>
+    <input type="radio" name="year" value="all" checked> All
+  </label>
+
+  <label>
+    <input type="radio" name="year" value="2020"> 2020
+  </label>
+
+  <label>
+    <input type="radio" name="year" value="2021"> 2021
+  </label>
+
+  <label>
+    <input type="radio" name="year" value="2022"> 2022
+  </label>
+</div>
+
+        <div class="home-article" data-title="my school life comes to an end" data-year="2021">
             <div class="home-article-img">
                 <a href="blogpost.html"> <img src="img/ns dav.jpg" alt="article"> </a>
             </div>
@@ -90,7 +99,7 @@
                 <span>17 Nov 22 | 6 min read</span>
             </div>
         </div>
-        <div class="home-article" data-title="my last day of ns dav school">
+        <div class="home-article" data-title="my last day of ns dav school"  data-year="2021">
             <div class="home-article-img">
                 <a href="last day of dav.html"> <img src="img/old ns dav.png" alt="article"> </a>
             </div>
@@ -103,7 +112,7 @@
                 <span>17 Nov 22 | 6 min read</span>
             </div>
         </div>
-        <div class="home-article" data-title="vibrant preparatory school memories">
+        <div class="home-article" data-title="vibrant preparatory school memories" data-year="2020">
             <div class="home-article-img">
                 <a href="Vibrant.html"> <img src="img/vibrant.jpg" alt="article"></a>
             </div>
@@ -174,10 +183,39 @@
 
           
 </script>
+
+
+<script>
+  const yearRadios = document.querySelectorAll('input[name="year"]');
+  const articles = document.querySelectorAll(".home-article");
+
+  function applyYearFilter() {
+    const selectedYear =
+      document.querySelector('input[name="year"]:checked')?.value || "all";
+
+    articles.forEach(article => {
+      const articleYear = article.dataset.year;
+
+      if (selectedYear === "all" || articleYear === selectedYear) {
+        article.style.display = "flex";
+      } else {
+        article.style.display = "none";
+      }
+    });
+  }
+
+  yearRadios.forEach(radio =>
+    radio.addEventListener("change", applyYearFilter)
+  );
+</script>
+
+
+        
         
 ---------------------        
 </body>
 </html>
+
 
 
 
