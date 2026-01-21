@@ -15,6 +15,16 @@ img {margin-bottom: -7px}
 .w3-row-padding img {margin-bottom: 12px}
 </style>
 </head>
+
+
+  <script>
+if (sessionStorage.getItem("auth") !== "yes") {
+  window.location.href = "index.html";
+}
+  </script>
+
+
+
 <body>
 
 <!-- Sidebar -->
@@ -112,3 +122,4 @@ function w3_close() {
 </body>
 
 </html>
+
