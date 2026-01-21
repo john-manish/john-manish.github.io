@@ -256,3 +256,16 @@
 .mk-btn.mk-disabled:hover,.mk-btn:disabled:hover{box-shadow:none}
 .mk-padding-small{padding:4px 8px!important}.mk-padding{padding:8px 16px!important}.mk-padding-large{padding:12px 24px!important}
 .mk-margin-bottom{margin-bottom:16px!important}
+
+
+
+
+
+
+mark {
+  background-color: #ffe58a;
+  color: #000;
+  padding: 0 3px;
+  border-radius: 3px;
+}
+
