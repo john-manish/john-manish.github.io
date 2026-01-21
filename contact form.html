@@ -22,7 +22,19 @@
             </ul>
         </div>
         <div class="nav-right">
-            <form action="/search.html" method="get">
+            <form name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field">
+
+
+                 <!-- Anti-spam -->
+  <p style="display:none;">
+    <label>Don’t fill this: <input name="bot-field"></label>
+  </p>
+
+                
+                
                 <input class="form-input" type="text" name="query" placeholder="Article Search">
                 <button class="btn">Search</button>
             </form>
@@ -66,4 +78,5 @@
             <a href="https://www.vecteezy.com/free-vector/typewriter">Vector Credits: Vecteezy</a> 
     </div>
 </body>
+
 </html>
