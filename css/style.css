@@ -270,7 +270,7 @@ mark {
 }
 
 
-/* Right and left search results */
+
 
 .results-layout {
   display: flex;
@@ -290,4 +290,5 @@ mark {
   margin-bottom: 12px;
   width: 100%;
 }
+
 
