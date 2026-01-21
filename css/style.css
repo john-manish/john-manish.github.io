@@ -272,10 +272,6 @@ mark {
 
 
 
-/* Anchor container */
-.home-articles {
-  position: relative;
-}
 
 /* Clear Filters button – fixed to right side of results area */
 .clear-btn {
@@ -284,6 +280,7 @@ mark {
   right: 0;           /* RIGHT SIDE */
   z-index: 10;
 }
+
 
 
 
