@@ -158,3 +158,36 @@ font-size: 12px;
   }
 }
 
+
+
+
+
+
+
+
+/* 📱 Fix Clear Filters + Year layout on mobile */
+@media screen and (max-width: 900px) {
+
+  /* Make year-box vertical instead of horizontal */
+  .year-box.adjust-year {
+    position: relative;
+    left: auto;
+    top: auto;
+    flex-direction: column;     /* 🔥 KEY FIX */
+    align-items: flex-end;
+    gap: 8px;
+  }
+
+  /* Move Clear Filters to top-right area */
+  .clear-filter-box {
+    position: absolute;
+    top: -40px;                 /* aligns with Search Results */
+    right: 0;
+  }
+
+  /* Push Year slightly down */
+  .year-box.adjust-year h3 {
+    margin-top: 30px;
+  }
+}
+
