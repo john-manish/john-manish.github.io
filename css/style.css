@@ -216,6 +216,18 @@
   text-decoration: none;
   color: black;
 }
+
+
+/* New Clear Filter container */
+.clear-filter-box {
+  position: absolute;
+  top: 20px;      /* adjust if needed */
+  right: 0;       /* pushes it to right */
+  z-index: 10;
+}
+
+
+
 /* .home-articles{} */
 .footer {
   height: 50px;
@@ -268,6 +280,7 @@ mark {
   padding: 0 3px;
   border-radius: 3px;
 }
+
 
 
 
