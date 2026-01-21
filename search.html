@@ -66,6 +66,11 @@
 
 <p id="noResult" style="display:none;"> No results found. Try a different keyword.</p>
 
+        
+<button class="btn" onclick="resetSearch()">Clear Filters</button>
+
+        
+
        <div class="year-box adjust-year">
   <h3>Year</h3>
 
@@ -239,17 +244,22 @@
   });
 </script>
 
+
         
-  <script>
-  if (window.location.search) {
+   <script>
+  function resetSearch() {
     history.replaceState(null, "", window.location.pathname);
+    location.reload();
   }
 </script>
+     
+
       
         
 ---------------------        
 </body>
 </html>
+
 
 
 
