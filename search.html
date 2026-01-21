@@ -211,10 +211,46 @@
 
 
         
+<script>
+  // 🔁 RESET EVERYTHING ON PAGE LOAD
+  window.addEventListener("load", () => {
+    // remove highlights
+    document.querySelectorAll(".home-article h3").forEach(h3 => {
+      h3.innerHTML = h3.textContent;
+    });
+
+    // show all articles
+    document.querySelectorAll(".home-article").forEach(article => {
+      article.style.display = "flex";
+    });
+
+    // reset year to "All"
+    const allYear = document.querySelector('input[name="year"][value="all"]');
+    if (allYear) allYear.checked = true;
+
+    // clear result text
+    const title = document.getElementById("searchTitle");
+    const count = document.getElementById("resultCount");
+    const noResult = document.getElementById("noResult");
+
+    if (title) title.innerText = "Search Results";
+    if (count) count.innerText = "";
+    if (noResult) noResult.style.display = "none";
+  });
+</script>
+
+        
+  <script>
+  if (window.location.search) {
+    history.replaceState(null, "", window.location.pathname);
+  }
+</script>
+      
         
 ---------------------        
 </body>
 </html>
+
 
 
 
