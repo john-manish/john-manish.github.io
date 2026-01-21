@@ -269,3 +269,25 @@ mark {
   border-radius: 3px;
 }
 
+
+/* Right and left search results */
+
+.results-layout {
+  display: flex;
+  gap: 40px;
+}
+
+.results-left {
+  flex: 1;
+}
+
+.results-right {
+  width: 220px;
+  text-align: right;
+}
+
+.results-right .clear-btn {
+  margin-bottom: 12px;
+  width: 100%;
+}
+
