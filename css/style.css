@@ -272,37 +272,26 @@ mark {
 
 
 
-/* 🔒 FORCE results layout */
-.results-layout {
-  display: flex !important;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 40px;
-}
-
-/* LEFT column */
-.results-left {
-  flex: 1;
-}
-
-/* RIGHT column */
+/* Right-side filter panel */
 .results-right {
-  width: 240px;
+  float: right;            /* 🔥 key fix */
+  width: 220px;
+  margin-left: 30px;
   text-align: right;
-  margin-left: auto;   /* 🔥 THIS pushes it to the right */
 }
 
 /* Clear button */
 .results-right .clear-btn {
   display: block;
-  margin: 0 0 12px auto; /* right aligned */
+  margin-bottom: 12px;
+  width: 100%;
 }
 
-/* Cancel any floats */
-.results-right,
-.results-right * {
-  float: none !important;
+/* Prevent text/image collapse */
+.home-article {
+  overflow: hidden;
 }
+
 
 
 
