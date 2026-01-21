@@ -273,13 +273,7 @@ mark {
 
 
 
-/* Clear Filters button – fixed to right side of results area */
-.clear-btn {
-  position: absolute;
-  top: 20px;          /* adjust vertically if needed */
-  right: 0;           /* RIGHT SIDE */
-  z-index: 10;
-}
+
 
 
 
