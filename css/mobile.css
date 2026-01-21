@@ -165,29 +165,43 @@ font-size: 12px;
 
 
 
-/* 📱 Fix Clear Filters + Year layout on mobile */
-@media screen and (max-width: 900px) {
+/* =========================
+   SEARCH PAGE – MOBILE FIX
+   ========================= */
+@media (max-width: 768px) {
 
-  /* Make year-box vertical instead of horizontal */
-  .year-box.adjust-year {
-    position: relative;
-    left: auto;
-    top: auto;
-    flex-direction: column;     /* 🔥 KEY FIX */
-    align-items: flex-end;
-    gap: 8px;
+  /* Prevent text from going under Clear Filters */
+  #searchTitle {
+    padding-right: 150px;   /* reserve space for button */
   }
 
-  /* Move Clear Filters to top-right area */
+  /* Clear Filters button – top right of results box */
   .clear-filter-box {
     position: absolute;
-    top: -40px;                 /* aligns with Search Results */
-    right: 0;
+    top: 12px;
+    right: 12px;
   }
 
-  /* Push Year slightly down */
-  .year-box.adjust-year h3 {
-    margin-top: 30px;
+  /* Reset year box positioning on mobile */
+  .year-box {
+    position: static;
+    margin-top: 16px;
+    text-align: left;
+  }
+
+  /* Year heading spacing */
+  .year-box h3 {
+    margin-bottom: 6px;
+  }
+
+  /* Make Year radios horizontal */
+  .year-box label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 12px;
+    font-size: 14px;
   }
 }
+
+
 
