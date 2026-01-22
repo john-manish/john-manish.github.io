@@ -197,7 +197,17 @@ const footerToggleBtn = document.getElementById("footerToggle");
 // Load saved mode
 if (localStorage.getItem("footerMode") === "light") {
   footer.classList.add("light");
-  footerToggleBtn.textContent = "🌞 Light";
+}
+
+// Sync icon on load
+updateFooterIcon();
+
+function updateFooterIcon() {
+  if (footer.classList.contains("light")) {
+    footerToggleBtn.textContent = "🌞 Light";
+  } else {
+    footerToggleBtn.textContent = "🌙 Dark";
+  }
 }
 
 function toggleFooterMode() {
@@ -205,13 +215,13 @@ function toggleFooterMode() {
 
   if (footer.classList.contains("light")) {
     localStorage.setItem("footerMode", "light");
-    footerToggleBtn.textContent = "🌞 Light";
   } else {
     localStorage.setItem("footerMode", "dark");
-    footerToggleBtn.textContent = "🌙 Dark";
   }
+
+  updateFooterIcon();
 }
-</script>  
+</script>
 
 
 <!-- Full Page Dark Mode -->
