@@ -186,12 +186,12 @@ window.addEventListener("scroll", () => {
 <!-- For Light/Dark Mode Footer -->
 <script>
 const footer = document.getElementById("siteFooter");
-const toggleBtn = document.getElementById("footerToggle");
+const footerToggleBtn = document.getElementById("footerToggle");
 
 // Load saved mode
 if (localStorage.getItem("footerMode") === "light") {
   footer.classList.add("light");
-  toggleBtn.textContent = "🌞 Light";
+  footerToggleBtn.textContent = "🌞 Light";
 }
 
 function toggleFooterMode() {
@@ -211,12 +211,12 @@ function toggleFooterMode() {
 <!-- Full Page Dark Mode -->
 
   <script>
-const toggleBtn = document.getElementById("themeToggle");
+const themeToggleBtn = document.getElementById("themeToggle");
 
 // Load saved theme
 if (localStorage.getItem("theme") === "dark") {
   document.body.classList.add("dark");
-  toggleBtn.textContent = "☀️";
+  themeToggleBtn.textContent = "☀️";
 }
 
 function toggleTheme() {
