@@ -114,7 +114,7 @@ Logout
   
 
 <!-- Footer -->
- <footer class="site-footer">
+ <footer class="site-footer" id="siteFooter">
   <div class="footer-icons">
     <a href="#"><i class="fa fa-globe"></i></a>
     <a href="#"><i class="fa fa-whatsapp"></i></a>
@@ -124,6 +124,10 @@ Logout
     <a href="#"><i class="fa fa-snapchat"></i></a>
     <a href="#"><i class="fa fa-github"></i></a>
   </div>
+
+  <button id="footerToggle" onclick="toggleFooterMode()">
+    🌙 Dark
+  </button>
 
   <p class="footer-text">
     copyright <a href="#">2022 Manish (john)</a>.
@@ -184,6 +188,31 @@ window.addEventListener("scroll", () => {
   lastScrollY = currentScrollY;
 });
 </script>
+
+
+<!-- For Light/Dark Mode Footer -->
+<script>
+const footer = document.getElementById("siteFooter");
+const toggleBtn = document.getElementById("footerToggle");
+
+// Load saved mode
+if (localStorage.getItem("footerMode") === "light") {
+  footer.classList.add("light");
+  toggleBtn.textContent = "🌞 Light";
+}
+
+function toggleFooterMode() {
+  footer.classList.toggle("light");
+
+  if (footer.classList.contains("light")) {
+    localStorage.setItem("footerMode", "light");
+    toggleBtn.textContent = "🌞 Light";
+  } else {
+    localStorage.setItem("footerMode", "dark");
+    toggleBtn.textContent = "🌙 Dark";
+  }
+}
+</script>  
 
 </body>
 
