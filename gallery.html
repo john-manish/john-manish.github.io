@@ -5,7 +5,7 @@
 <title>Manish -- Gallery</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/gallery.css">
 <link rel="stylesheet" href="css/gallery-mobile.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -30,20 +30,25 @@ if (sessionStorage.getItem("auth") !== "yes") {
   
   
 
+<!-- Hamburger -->
+<button class="hamburger" onclick="openMenu()">
+  <i class="fa fa-bars"></i>
+</button>
+
 <!-- Sidebar -->
-<nav class="w3-sidebar w3-black w3-animate-top w3-xxlarge" style="display:none;padding-top:150px" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-black w3-xxlarge w3-padding w3-display-topright" style="padding:6px 24px">
-    <i class="fa fa-remove"></i>
-  </a>
-  <div class="w3-bar-block w3-center">
-    <a href="index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Home</a>
-    <a href="about-info.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black">About</a>
-    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Photos</a>
-    <a href="Spotify.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Spotify</a>
-    <a href="blog.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Blogs</a>
-    <a href="master/contact.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Contact</a>
-  </div>
+<nav id="sidebar">
+  <button class="close-btn" onclick="closeMenu()">✕</button>
+
+  <a href="index.html">Home</a>
+  <a href="about-info.html">About</a>
+  <a href="#">Photos</a>
+  <a href="Spotify.html">Spotify</a>
+  <a href="blog.html">Blogs</a>
+  <a href="master/contact.html">Contact</a>
 </nav>
+
+<!-- Overlay -->
+<div id="overlay" onclick="closeMenu()"></div>
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-content" style="max-width:1500px">
@@ -131,21 +136,19 @@ function myFunction() {
 }
 
 // Open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.width = "100%";
-  document.getElementById("mySidebar").style.display = "block";
-  
-   // HIDE logout when menu opens
+
+function openMenu() {
+  document.getElementById("sidebar").style.right = "0";
+  document.getElementById("overlay").style.display = "block";
   document.getElementById("logoutBtn").style.display = "none";
 }
 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-
-   // SHOW logout again when menu closes
+function closeMenu() {
+  document.getElementById("sidebar").style.right = "-320px";
+  document.getElementById("overlay").style.display = "none";
   document.getElementById("logoutBtn").style.display = "block";
-  
 }
+
 </script>
 
   <!-- code for logout -->
