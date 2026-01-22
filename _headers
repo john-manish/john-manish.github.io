@@ -1,4 +1,8 @@
 /gallery.html
-/manish-img/*
   Basic-Auth: manish:manish8090
 
+/gallery/*
+  Basic-Auth: manish:manish8090
+
+/manish-img/*
+  Basic-Auth: manish:manish8090
