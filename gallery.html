@@ -133,10 +133,17 @@ function myFunction() {
 function w3_open() {
   document.getElementById("mySidebar").style.width = "100%";
   document.getElementById("mySidebar").style.display = "block";
+  
+   // HIDE logout when menu opens
+  document.getElementById("logoutBtn").style.display = "none";
 }
 
 function w3_close() {
   document.getElementById("mySidebar").style.display = "none";
+
+   // SHOW logout again when menu closes
+  document.getElementById("logoutBtn").style.display = "block";
+  
 }
 </script>
 
