@@ -10,3 +10,47 @@
     font-size: 14px;
   }
 }
+
+
+
+
+/* Mobile only */
+@media (max-width: 768px) {
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -80%;              /* hidden by default */
+    width: 80%;               /* HALF SCREEN */
+    height: 100vh;
+    background: #000;
+    color: #fff;
+    z-index: 2000;
+    padding: 60px 25px;
+    transition: right 0.3s ease;
+  }
+
+  .mobile-menu.active {
+    right: 0;                 /* slide in */
+  }
+
+  .mobile-menu a {
+    display: block;
+    color: #bbb;
+    font-size: 22px;
+    margin: 18px 0;
+    text-decoration: none;
+  }
+
+  .mobile-menu a:hover {
+    color: #fff;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+  }
+}
