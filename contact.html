@@ -4,16 +4,14 @@
   <meta charset="UTF-8">
   <title>Contact</title>
 </head>
-
 <body>
 
 <form
   name="contact"
   method="POST"
   data-netlify="true"
-  netlify-honeypot="bot-field"
-  action="/thank-you.html"
->
+  netlify-honeypot="bot-field">
+
   <!-- REQUIRED -->
   <input type="hidden" name="form-name" value="contact">
 
@@ -34,7 +32,10 @@
     <textarea name="message" placeholder="Your Message" required></textarea>
   </p>
 
-  <button type="submit">Send</button>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+
 </form>
 
 </body>
