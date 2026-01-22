@@ -30,7 +30,8 @@ body.dark {
 
 .page-header p {
   margin-top: 6px;
-  color: #666;
+  color: var(--text-color);
+  opacity: 0.7;
 }
 
 
