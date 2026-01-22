@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/gallery-mobile.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
@@ -155,6 +156,31 @@ function logout() {
 }
   </script>
   
+
+
+
+
+<!-- For Logout Button Autohide on Scroll -->
+  <script>
+let lastScrollY = window.scrollY;
+const logoutBtn = document.getElementById("logoutBtn");
+
+window.addEventListener("scroll", () => {
+  const currentScrollY = window.scrollY;
+
+  if (currentScrollY > lastScrollY && currentScrollY > 80) {
+    // scrolling DOWN → hide
+    logoutBtn.style.transform = "translateY(-100px)";
+    logoutBtn.style.opacity = "0";
+  } else {
+    // scrolling UP → show
+    logoutBtn.style.transform = "translateY(0)";
+    logoutBtn.style.opacity = "1";
+  }
+
+  lastScrollY = currentScrollY;
+});
+</script>
 
 </body>
 
