@@ -9,11 +9,7 @@
 <link rel="stylesheet" href="css/gallery-mobile.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1 {font-family: "Montserrat", sans-serif}
-img {margin-bottom: -7px}
-.w3-row-padding img {margin-bottom: 12px}
-</style>
+
 </head>
 
 
@@ -51,18 +47,13 @@ if (sessionStorage.getItem("auth") !== "yes") {
 <div id="overlay" onclick="closeMenu()"></div>
 
 <!-- !PAGE CONTENT! -->
-<div class="w3-content" style="max-width:1500px">
+
 
 <!-- Header -->
-<div class="w3-opacity">
-<span class="w3-button w3-xxlarge w3-white w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></span> 
-<div class="w3-clear"></div>
-<header class="w3-center w3-margin-bottom">
-  <h1><b>PHOTOS</b></h1>
-  <p><b>My Photographs</b></p>
-  <p class="w3-padding-16"><button class="w3-button w3-black" onclick="myFunction()">Toggle Grid Padding</button></p>
+<header class="page-header">
+  <h1>PHOTOS</h1>
+  <p>My Photographs</p>
 </header>
-</div>
 
 <!-- Photo Grid -->
 <style>
@@ -113,7 +104,7 @@ Logout
   
 
 <!-- Footer -->
-<footer class="w3-container w3-padding-10 w3-black w3-center  w3-xlarge" style="margin-top:128px"> 
+ <footer>
      <a href="https://ms1319js.github.io"><i class="fa fa-globe mk-hover-opacity"></i></a>
     <a href="https://api.whatsapp.com/send/?phone=918440825316&text=I'm interested in having chat with you !&lang=en"><i class="fa fa-whatsapp mk-hover-opacity"></i></a>
     <a href="mailto: john.manish8090@gmail.com"><i class="fa fa-envelope mk-hover-opacity"></i></a>
@@ -126,14 +117,8 @@ Logout
  
 <script>
 // Toggle grid padding
-function myFunction() {
-  var x = document.getElementById("myGrid");
-  if (x.className === "w3-row") {
-    x.className = "w3-row-padding";
-  } else { 
-    x.className = x.className.replace("w3-row-padding", "w3-row");
-  }
-}
+
+
 
 // Open and close sidebar
 
