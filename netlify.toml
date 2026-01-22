@@ -4,11 +4,13 @@
     Basic-Auth = "manish:manish8090"
 
 [[headers]]
-  for = "/gallery/*"
-  [headers.values]
-    Basic-Auth = "manish:manish8090"
-
-[[headers]]
   for = "/manish-img/*"
   [headers.values]
     Basic-Auth = "manish:manish8090"
+
+
+[[redirects]]
+  from = "/gallery"
+  to = "/gallery.html"
+  status = 301
+
