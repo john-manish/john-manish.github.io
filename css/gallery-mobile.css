@@ -1,0 +1,12 @@
+/* Logout button smooth hide/show on scroll */
+#logoutBtn {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Optional: slightly smaller on mobile */
+@media (max-width: 768px) {
+  #logoutBtn {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+}
