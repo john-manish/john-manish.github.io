@@ -1,4 +1,14 @@
-[[redirects]]
-  from = "/gallery"
-  to = "/gallery.html"
-  status = 301
+[[headers]]
+  for = "/gallery.html"
+  [headers.values]
+    Basic-Auth = "manish:manish8090"
+
+[[headers]]
+  for = "/gallery/*"
+  [headers.values]
+    Basic-Auth = "manish:manish8090"
+
+[[headers]]
+  for = "/manish-img/*"
+  [headers.values]
+    Basic-Auth = "manish:manish8090"
