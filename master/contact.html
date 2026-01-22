@@ -91,17 +91,22 @@
                   <h3 class="u-custom-font u-text u-text-1">Contact Us</h3>
                   <p class="u-custom-font u-text u-text-2">Fill this form To Contact Me !</p>
                   <div class="u-form u-form-1">
-                   <form action="https://formspree.io/f/xayvkgrb"
-					     method="POST" 
-					     class="u-clearfix u-form-spacing-20 u-form-vertical u-inner-form"
-					     style="padding: 0;" source="custom" 
-					     name="form">
+                    <form
+                       name="contact"
+                       method="POST"
+                       data-netlify="true"
+                       netlify-honeypot="bot-field"
+                       
+                         action="/contact.html"   >
 
 
 
 						<input type="hidden" name="form-name" value="contact">
                         <input type="hidden" name="bot-field">
-                      
+
+
+						<div  class="u-clearfix u-form-spacing-20 u-form-vertical u-inner-form" style="padding: 0;" source="custom" /div>
+
                       
                       <div class="u-form-group u-form-partition-factor-2">
                         <label for="email-b381" class="u-custom-font u-label u-label-1">Name</label>
