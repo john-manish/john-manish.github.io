@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/gallery"
+  to = "/gallery.html"
+  status = 301
