@@ -1,40 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/utils.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/contact.css">
-    <link rel="stylesheet" href="css/mobile.css">
-    <title>Manish</title>
-</head>
-<body>
-    <nav class="navigation max-width-1 m-auto">
-        <div class="nav-left">
-            <a href="/">
-                <span><img src="img/logo.png" width="94px" alt=""></span>
-            </a>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-
-
-
 <form
   name="contact"
   method="POST"
   data-netlify="true"
+  netlify-honeypot="bot-field"
   action="/contact.html">
-  netlify-honeypot="bot-field">
 
-  <!-- REQUIRED for Netlify -->
+  <!-- REQUIRED -->
   <input type="hidden" name="form-name" value="contact">
 
-  <!-- Spam protection -->
+  <!-- Honeypot -->
   <p style="display:none;">
     <label>Don’t fill this: <input name="bot-field"></label>
   </p>
@@ -56,13 +30,5 @@
     placeholder="Your Message"
     required></textarea>
 
-  <button type="submit" class="btn">Send Message</button>
+  <button type="submit">Send Message</button>
 </form>
-
-        <div class="footer">
-        <p><a href="https://john-manish.github.io">Copyright &copy; john-manish </p>
-            <a href="https://www.vecteezy.com/free-vector/typewriter">Vector Credits: Vecteezy</a> 
-    </div>
-</body>
-
-</html>
