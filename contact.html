@@ -1,16 +1,41 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact</title>
+</head>
 
-<form name="contact" netlify>
-  <p>
-    <label>Name <input type="text" name="name" /></label>
+<body>
+
+<form
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  action="/thank-you.html"
+>
+  <!-- REQUIRED -->
+  <input type="hidden" name="form-name" value="contact">
+
+  <!-- Honeypot -->
+  <p style="display:none;">
+    <label>Don’t fill this: <input name="bot-field"></label>
   </p>
+
   <p>
-    <label>Email <input type="email" name="email" /></label>
+    <input type="text" name="name" placeholder="Your Name" required>
   </p>
+
   <p>
-    <button type="submit">Send</button>
+    <input type="email" name="email" placeholder="Your Email" required>
   </p>
+
+  <p>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+  </p>
+
+  <button type="submit">Send</button>
 </form>
+
+</body>
 </html>
