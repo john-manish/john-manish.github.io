@@ -1,3 +1,28 @@
+@media (max-width: 768px) {
+  #sidebar {
+    width: 75vw;       /* instead of 100% or fixed px */
+    max-width: 300px; /* safety cap for small phones */
+  }
+}
+
+@media (max-width: 768px) {
+  #sidebar nav {
+    padding-top: 60px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  #sidebar a {
+    font-size: 18px;
+  }
+}
+
+
+/* New code ends here */
+
+
+
 /* Logout button smooth hide/show on scroll */
 #logoutBtn {
   transition: transform 0.3s ease, opacity 0.3s ease;
