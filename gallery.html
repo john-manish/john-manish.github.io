@@ -7,6 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/gallery.css">
 <link rel="stylesheet" href="css/gallery-mobile.css">
+<script src="js/gallery.js" defer></script>
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -16,19 +18,14 @@
 
 <body>
 
-<!-- Dark Mode Button -->
-  <button id="themeToggle" onclick="toggleTheme()">
-  🌙
-  </button>
+
+  
+<!-- Top theme toggle -->
+<button id="themeToggle" onclick="toggleTheme()">🌙</button>
+
 
   
 
-  
-  <script>
-if (sessionStorage.getItem("auth") !== "yes") {
-  window.location.href = "pass.html";
-}
-  </script>
 
   
   
@@ -66,13 +63,13 @@ if (sessionStorage.getItem("auth") !== "yes") {
 
 
 <div class="gallery">
-  <img src="manish-img/manish1.jpg" loading="lazy">
+  <img src="manish-img/manish2.jpg" loading="lazy">
   <img src="manish-img/manish2.jpg" loading="lazy">
   <img src="manish-img/manish3.jpg" loading="lazy">
   <img src="manish-img/manish4.jpg" loading="lazy">
   <img src="manish-img/manish5.jpg" loading="lazy">
-  <img src="manish-img/manish1.jpg" loading="lazy">
-  <img src="manish-img/manish1.jpg" loading="lazy">
+  <img src="manish-img/manish2.jpg" loading="lazy">
+  <img src="manish-img/manish2.jpg" loading="lazy">
   <img src="manish-img/manish2.jpg" loading="lazy">
   <img src="manish-img/manish3.jpg" loading="lazy">
   <img src="manish-img/manish4.jpg" loading="lazy">
@@ -124,142 +121,32 @@ Logout
     <a href="#"><i class="fa fa-github"></i></a>
   </div>
 
-  <button id="footerToggle" onclick="toggleFooterMode()">
-    🌙 Dark
-  </button>
+ <!-- Footer toggle -->
+<button id="footerToggle" onclick="toggleFooterMode()">🌓 Auto</button>
 
   <p class="footer-text">
     copyright <a href="#">2022 Manish (john)</a>.
   </p>
 </footer>
  
-<script>
-// Toggle grid padding
-
-
-
-// Open and close sidebar
-
-function openMenu() {
-  document.getElementById("sidebar").style.right = "0";
-  document.getElementById("overlay").style.display = "block";
-  document.getElementById("logoutBtn").style.display = "none";
-}
-
-function closeMenu() {
-  document.getElementById("sidebar").style.right = "-320px";
-  document.getElementById("overlay").style.display = "none";
-  document.getElementById("logoutBtn").style.display = "block";
-}
-
-</script>
-
-  <!-- code for logout -->
-  <script>
-function logout() {
-  sessionStorage.removeItem("auth");
-  window.location.href = "pass.html";
-}
-  </script>
-  
 
 
 
 
-<!-- For Logout Button Autohide on Scroll -->
-  <script>
-let lastScrollY = window.scrollY;
-const logoutBtn = document.getElementById("logoutBtn");
 
-window.addEventListener("scroll", () => {
-  const currentScrollY = window.scrollY;
+<!-- Lightbox -->
+<div id="lightbox">
+  <span class="lightbox-close">✕</span>
 
-  if (currentScrollY > lastScrollY && currentScrollY > 80) {
-    // scrolling DOWN → hide
-    logoutBtn.style.transform = "translateY(-100px)";
-    logoutBtn.style.opacity = "0";
-  } else {
-    // scrolling UP → show
-    logoutBtn.style.transform = "translateY(0)";
-    logoutBtn.style.opacity = "1";
-  }
+  <span class="lightbox-nav prev">❮</span>
+  <span class="lightbox-nav next">❯</span>
 
-  lastScrollY = currentScrollY;
-});
-</script>
+  <div id="lightbox-counter"></div>
+  <img id="lightbox-img" src="">
+</div>
 
 
-<!-- For Light/Dark Mode Footer -->
-<script>
-const footer = document.getElementById("siteFooter");
-const footerToggleBtn = document.getElementById("footerToggle");
 
-// Load saved mode
-if (localStorage.getItem("footerMode") === "light") {
-  footer.classList.add("light");
-}
-
-// Sync icon on load
-updateFooterIcon();
-
-function updateFooterIcon() {
-  if (footer.classList.contains("light")) {
-    footerToggleBtn.textContent = "🌞 Light";
-  } else {
-    footerToggleBtn.textContent = "🌙 Dark";
-  }
-}
-
-function toggleFooterMode() {
-  footer.classList.toggle("light");
-
-  if (footer.classList.contains("light")) {
-    localStorage.setItem("footerMode", "light");
-  } else {
-    localStorage.setItem("footerMode", "dark");
-  }
-
-  updateFooterIcon();
-}
-</script>
-
-
-<!-- Full Page Dark Mode -->
-
-  <script>
-  const themeToggleBtn = document.getElementById("themeToggle");
-
-  // Restore saved theme
-  if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark");
-  }
-
-  // Function to update icon
-  function updateThemeIcon() {
-    if (document.body.classList.contains("dark")) {
-      themeToggleBtn.textContent = "☀️";
-    } else {
-      themeToggleBtn.textContent = "🌙";
-    }
-  }
-
-  // Initial icon sync
-  updateThemeIcon();
-
-  // Toggle handler
-  themeToggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-
-    // Save preference
-    localStorage.setItem(
-      "theme",
-      document.body.classList.contains("dark") ? "dark" : "light"
-    );
-
-    // Update icon AFTER toggle
-    updateThemeIcon();
-  });
-  </script>
 
   
 </body>

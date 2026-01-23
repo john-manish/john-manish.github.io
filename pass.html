@@ -3,46 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/pass.css">
+<script src="js/pass.js" defer></script>
 <title>Protected Gallery</title>
 
-<style>
-body {
-  margin: 0;
-  height: 100vh;
-  background: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: system-ui, sans-serif;
-  color: white;
-}
 
-.box {
-  text-align: center;
-}
-
-input {
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 6px;
-  border: none;
-  outline: none;
-}
-
-button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  background: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-</style>
 </head>
 
 <body>
 
+
+<!--
+  <small style="opacity:0.7">Private gallery</small>
+-->
+
+
+  <div class="box">
+  <h2>Enter Password</h2>
+
+  <!-- FORM ADDED -->
+<form onsubmit="check(); return false;">
+  <div class="pass-box">
+    <input
+      type="password"
+      id="pwd"
+      placeholder="Password"
+      autocomplete="current-password"
+      required
+    >
+    <span id="eye" onclick="toggle()">👁️</span>
+  </div>
+
+  <br>
+  <button type="submit">Unlock</button>
+</form>
+</div>
+
+
+  <!---- OLD PASSWORD BOX -->
+  <!--
 <div class="box">
   <h2>Enter Password</h2>
   <input type="password" id="pwd" placeholder="Password">
@@ -50,52 +49,10 @@ button {
   <button onclick="check()">Unlock</button>
   <p id="msg"></p>
 </div>
+  -->
 
-<!-- 
-  <script>
-const PASSWORD = "manish8090";
 
-if (sessionStorage.getItem("auth") === "yes") {
-  window.location.href = "gallery.html";
-}
 
-function check() {
-  const input = document.getElementById("pass").value;
-  if (input === PASSWORD) {
-    sessionStorage.setItem("auth", "yes");
-    window.location.href = "gallery.html";
-  } else {
-    document.getElementById("msg").innerText = "Wrong password";
-  }
-}
-</script>
--->
-
-  <script>
-    async function sha256(text) {
-      const data = new TextEncoder().encode(text);
-      const hash = await crypto.subtle.digest("SHA-256", data);
-      return Array.from(new Uint8Array(hash))
-        .map(b => b.toString(16).padStart(2, "0"))
-        .join("");
-    }
-
-    async function check() {
-      const input = document.getElementById("pwd").value;
-      const hash = await sha256(input);
-
-      // CHANGE THIS HASH ONLY
-      const correct =
-        "c2a7a056ddbf0555350aed698b983c858b46cd2d0f5ce756ded408b197632483";
-
-      if (hash === correct) {
-        sessionStorage.setItem("auth", "yes");
-        window.location.href = "gallery.html";
-      } else {
-        alert("Wrong password");
-      }
-    }
-  </script>
   
 </body>
 </html>
