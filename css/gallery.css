@@ -1,21 +1,79 @@
-/* ===== THEME VARIABLES ===== */
+/* ===== DEFAULT (LIGHT) ===== */
 :root {
-  --bg-color: #ffffff;
+  --bg: #ffffff;
+  --text: #000;
   --text-color: #000000;
+  --logout-text: #000000;
   --card-bg: #ffffff;
   --border-color: #ddd;
+  --sidebar-hover-bg: #b04b4b; /* medium dark for light mode */
+  --logout-bg: #ffeded;        /* light mode */
+  --hamburger-bg: #111;     /* dark button */
+  --hamburger-text: #fff;  /* light icon */
+
+  --footer-bg: #948d8d;
+  --footer-text: #000;
 }
 
+/* ===== DARK THEME ===== */
 body.dark {
-  --bg-color: #0f0f0f;
+  --bg: #0f0f0f;
+  --text: #eaeaea;
   --text-color: #eaeaea;
+  --logout-text: #0c0c0c;
+
   --card-bg: #1a1a1a;
   --border-color: #333;
+  --sidebar-hover-bg: #4da075; /* medium dark for dark mode */
+  --logout-bg: #c49983c0;        /* dark mode */
+  --hamburger-bg: #f5f5f5; /* light button */
+  --hamburger-text: #111; /* dark icon */
+
+  --footer-bg: #201d1d;
+  --footer-text: #eaeaea;
+}
+
+/* ===== FOOTER OVERRIDES ===== */
+footer[data-mode="light"] {
+  background: #948d8d;
+  color: #000;
+}
+
+footer[data-mode="dark"] {
+  background: #000;
+  color: #eaeaea;
+}
+
+
+
+footer {
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  font-family: "Montserrat", sans-serif;
+  transition: background 0.3s, color 0.3s;
 }
 
 
 
 
+
+/* =====================
+   GALLERY STYLES
+   ===================== */
+
+
+/* Base */
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Montserrat", sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+
+/* Gallery Page Header */
 
 .page-header {
   text-align: center;
@@ -35,19 +93,6 @@ body.dark {
 }
 
 
-
-
-
-
-/* Base */
-body {
-  margin: 0;
-  background: var(--bg-color);
-  color: var(--text-color);
-  font-family: "Montserrat", sans-serif;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
 /* Header */
 header {
   text-align: center;
@@ -59,14 +104,23 @@ header {
   position: fixed;
   top: 15px;
   right: 15px;
-  background: #000;
-  color: #fff;
-  border: none;
+
+  background: var(--hamburger-bg);
+  color: var(--hamburger-text);
+  border: 1px solid var(--border-color);
+
   padding: 10px 14px;
   border-radius: 6px;
   font-size: 18px;
   z-index: 1200;
+  cursor: pointer;
 }
+
+
+.hamburger:hover {
+  filter: brightness(0.95);
+}
+
 
 
 
@@ -76,10 +130,10 @@ header {
   top: 55px;
   right: 10px;
   padding: 6px 12px;
-  border: none;
+  border: 1px solid var(--text-color);
   border-radius: 6px;
-  background: var(--card-bg);
-  color: var(--text-color);
+  background: var(--logout-bg);
+  color: var(--logout-text);
   cursor: pointer;
   z-index: 1000;
   transition: background 0.3s, color 0.3s, transform 0.3s, opacity 0.3s;
@@ -94,7 +148,7 @@ header {
   z-index: 3000;
   background: var(--card-bg);
   color: var(--text-color);
-  border: 1px solid var(--border-color);
+  border: 2px solid var(--border-color);
   padding: 8px 12px;
   border-radius: 50%;
   font-size: 18px;
@@ -110,6 +164,7 @@ header {
   max-width: 320px;
   height: 100%;
   background: var(--card-bg);
+   border-left: 3px solid var(--border-color);
   padding-top: 80px;
   transition: right 0.3s ease;
   z-index: 1300;
@@ -117,7 +172,8 @@ header {
 
 #sidebar a {
   display: block;
-  color: #ccc;
+  color: var(--text);
+  opacity: 0.8;
   text-decoration: none;
   padding: 16px;
   text-align: center;
@@ -125,8 +181,8 @@ header {
 }
 
 #sidebar a:hover {
-  background: #111;
-  color: #fff;
+  background: var(--sidebar-hover-bg);
+  color: var(--text);
 }
 
 /* Close button */
@@ -136,9 +192,13 @@ header {
   right: 15px;
   background: none;
   border: none;
-  color: #fff;
+  color: var(--text-color); /* ✔ adapts to theme */
   font-size: 26px;
+  cursor: pointer;
 }
+
+
+
 
 /* Overlay */
 #overlay {
@@ -151,6 +211,7 @@ header {
 
 /* Gallery */
 .gallery {
+  /* column-count: 2; */ /* mobile */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 8px;
@@ -164,51 +225,44 @@ header {
   height: 180px;
   object-fit: cover;
   border-radius: 6px;
+
+  opacity: 0;                     /* ← IMPORTANT */
+  transform: scale(0.98);         /* subtle settle-in */
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    box-shadow 0.3s ease;
+}
+
+.gallery img.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+.gallery img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
 
 
 
 
-/* =====================
-   FOOTER STYLES (OFF)
-   ===================== */
 
-/*
-.site-footer-old {
-  background: #000;
-  color: #fff;
-  text-align: center;
-  padding: 30px 10px 20px;
-  margin-top: 40px;
-}
-*/
 
 
 /* New footer Colour */
 
 .site-footer {
-  background: var(--card-bg);
-  color: var(--text-color);
+  
   text-align: center;
   padding: 30px 10px 20px;
   margin-top: 40px;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Light mode */
-.site-footer.light {
-  background: #f2f2f2;
-  color: #000;
-}
 
-.site-footer.light .footer-icons a {
-  color: #000;
-}
-
-.site-footer.light .footer-text a {
-  color: #333;
-}
 
 /* Toggle button */
 #footerToggle {
@@ -220,11 +274,6 @@ header {
   color: #fff;
   cursor: pointer;
   font-size: 13px;
-}
-
-.site-footer.light #footerToggle {
-  background: #ddd;
-  color: #000;
 }
 
 /* New footer ends here */
@@ -239,7 +288,7 @@ header {
 }
 
 .footer-icons a {
-  color: #fff;
+  color: inherit; /* ← THIS is the fix */
   font-size: 18px;
   text-decoration: none;
 }
@@ -260,4 +309,104 @@ header {
 
 .footer-text a:hover {
   text-decoration: underline;
+}
+
+
+
+
+
+
+/* ===== LIGHTBOX ===== */
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 5000;
+}
+
+#lightbox img {
+  max-width: 95%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+
+}
+
+/* Counter */
+#lightbox-counter {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  color: #fff;
+  font-size: 14px;
+  opacity: 0.8;
+  font-family: monospace;
+}
+
+
+/* Lightbox navigation arrows */
+.lightbox-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  padding: 10px;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.lightbox-nav:hover {
+  opacity: 1;
+}
+
+.lightbox-nav.prev {
+  left: 20px;
+}
+
+.lightbox-nav.next {
+  right: 20px;
+}
+
+/* Hide arrows on small screens (swipe instead) */
+@media (max-width: 768px) {
+  .lightbox-nav {
+    display: none;
+  }
+}
+
+
+
+/* Prevent image drag ghost */
+#lightbox img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+
+/* Show */
+#lightbox.active {
+  display: flex;
+}
+
+/* Mobile friendly */
+@media (max-width: 600px) {
+  .lightbox-close {
+    font-size: 28px;
+  }
 }

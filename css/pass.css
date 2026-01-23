@@ -1,0 +1,122 @@
+
+.pass-box {
+  position: relative;
+  display: inline-block;
+}
+
+.pass-box input {
+  padding-right: 40px;
+}
+
+#eye {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  padding: 4px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+}
+
+
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: system-ui, sans-serif;
+  color: white;
+}
+
+.box {
+  margin-bottom: 12px;
+  text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px; 
+
+     max-width: 280px;
+     width: 90%;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+
+/*Helps UX on keyboard & mobile*/
+input:focus {
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.3);
+}
+
+/* Add hover feedback to button (desktop only) */
+button:hover {
+  opacity: 0.9;
+}
+button:active {
+  transform: scale(0.98);
+}
+
+
+
+body {
+  background: radial-gradient(circle at top, #111, #000);
+}
+
+.box {
+  background: rgba(255,255,255,0.06);
+  padding: 28px 26px;
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+ /* box-shadow: 0 20px 40px rgba(0,0,0,0.6); */  /*minimal shadow */
+
+   box-shadow:
+    0 0 0 1px rgba(255,255,255,0.05),
+    0 0 30px rgba(0,150,255,0.15); /*glow effect */ /*enhanced shadow */ 
+}
+
+input {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+input::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+button {
+  width: 100%;
+  margin-top: 14px;
+}
+button {
+  background: #ff3b3b;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 4.5px 15px rgba(255,59,59,0.3);
+}
+
+button:hover {
+
+  /*box-shadow: 0 8px 20px rgba(255,59,59,0.4);*/  /*enhanced hover shadow */ /*inactive */
+  transform: translateY(-1.5px);
+}
