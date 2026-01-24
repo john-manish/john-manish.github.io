@@ -1,3 +1,7 @@
+/* =========================================================
+   1. THEME VARIABLES (LIGHT + DARK)
+   ========================================================= */
+
 /* ===== DEFAULT (LIGHT) ===== */
 :root {
   --bg: #ffffff;
@@ -33,7 +37,7 @@ body.dark {
   --footer-text: #eaeaea;
 }
 
-/* ===== FOOTER OVERRIDES ===== */
+/* ===== 2. FOOTER OVERRIDES ===== */
 footer[data-mode="light"] {
   background: #948d8d;
   color: #000;
@@ -46,23 +50,25 @@ footer[data-mode="dark"] {
 
 
 
-footer {
-  background: var(--footer-bg);
-  color: var(--footer-text);
-  font-family: "Montserrat", sans-serif;
-  transition: background 0.3s, color 0.3s;
-}
-
-
-
-
 
 /* =====================
    GALLERY STYLES
    ===================== */
 
 
+   /* ===============================
+   3. BASE / RESET
+   ================================== */
+
 /* Base */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
 
 body {
   margin: 0;
@@ -71,6 +77,11 @@ body {
   font-family: "Montserrat", sans-serif;
   transition: background 0.3s ease, color 0.3s ease;
 }
+
+
+/* =======================================================
+   4. PAGE LAYOUT (FOOTER SHRINK FIX)
+   ======================================================= */
 
 /* Flex to push footer down */
 #page {
@@ -84,6 +95,34 @@ body {
 }
 
 /* End of Flex to push footer down */
+
+
+/* ====================================================
+   5. TOP NAVBAR (DESKTOP)
+   ==================================================== */
+
+#top-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+  padding: 10px 20px;
+  display: flex;
+  gap: 20px;
+  z-index: 1000;
+}
+
+#top-navbar a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+/* ======================================
+   6. PAGE HEADER
+   ====================================== */
 
 /* Gallery Page Header */
 
@@ -105,14 +144,11 @@ body {
 }
 
 
-/* Header */
-header {
-  text-align: center;
-  margin: 40px 0;
-}
 
 
-
+/* ===============================================
+   7. FILTER BUTTONS
+   =============================================== */
 /* Filters */ 
 
 .filters {
@@ -137,7 +173,9 @@ header {
 
 /* End of Filters */
 
-
+/* ======================================================
+   8. FIXED TOP CONTROLS (ORDER MATTERS)
+   ====================================================== */
 /* Hamburger */
 .hamburger {
   position: fixed;
@@ -186,22 +224,23 @@ header {
 }
 
 
-/* Dark Mode Toggle Full page */
+/* Theme toggle */
 #themeToggle {
   position: fixed;
-  top: 10px;
-  left: 10px;
-  z-index: 3000;
+
+  z-index: 1200;
   background: var(--card-bg);
   color: var(--text-color);
-  border: 2px solid var(--border-color);
-  padding: 8px 12px;
+  border: 1px solid var(--border-color);
   border-radius: 50%;
-  font-size: 18px;
+  padding: 8px 10px;
   cursor: pointer;
 }
 
 
+/* ===================================================
+   9. SIDEBAR + SUBMENU + OVERLAY
+   =================================================== */
 
 /* Sidebar */
 #sidebar {
@@ -294,8 +333,6 @@ header {
 }
 
 
-
-
 /* Overlay */
 #overlay {
   position: fixed;
@@ -304,6 +341,10 @@ header {
   display: none;
   z-index: 1250;
 }
+
+/* =========================================================
+   10. GALLERY GRID + FADE-IN 
+   ========================================================= */
 
 /* Gallery */
 .gallery {
@@ -343,18 +384,26 @@ header {
 
 
 
+/* =========================================================
+   11. FOOTER (ALL KEPT)
+   ========================================================= */
+
+footer {
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  font-family: "Montserrat", sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
 
 
 
-
-
-/* New footer Colour */
+/* New footer Colour */ /* ===== FOOTER STYLES ===== */
 
 .site-footer {
   
   text-align: center;
   padding: 30px 10px 20px;
-  margin-top: 40px;
+  
   transition: background 0.3s ease, color 0.3s ease;
 }
 
@@ -371,8 +420,6 @@ header {
   cursor: pointer;
   font-size: 13px;
 }
-
-/* New footer ends here */
 
 
 
@@ -407,10 +454,9 @@ header {
   text-decoration: underline;
 }
 
-
-
-
-
+/* ===============================================
+   12. LIGHTBOX
+   =============================================== */
 
 /* ===== LIGHTBOX ===== */
 #lightbox {
@@ -429,6 +475,18 @@ header {
   border-radius: 10px;
   box-shadow: 0 0 30px rgba(0,0,0,0.6);
 }
+
+/* Prevent image drag ghost */
+#lightbox img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Show */
+#lightbox.active {
+  display: flex;
+}
+
 
 .lightbox-close {
   position: fixed;
@@ -479,30 +537,58 @@ header {
   right: 20px;
 }
 
+
+/* Code is included below in RESponsive section */
 /* Hide arrows on small screens (swipe instead) */
+/*
 @media (max-width: 768px) {
   .lightbox-nav {
     display: none;
   }
 }
-
-
-
-/* Prevent image drag ghost */
-#lightbox img {
-  user-select: none;
-  -webkit-user-drag: none;
-}
-
-
-/* Show */
-#lightbox.active {
-  display: flex;
-}
+*/
 
 /* Mobile friendly */
 @media (max-width: 600px) {
   .lightbox-close {
     font-size: 28px;
   }
+}
+
+
+
+/* ================= MOBILE THEME TOGGLE (LEFT) ============= */
+@media (max-width: 768px) {
+  #themeToggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;   /* 👈 move to left */
+    right: auto;  /* 👈 important: cancel right */
+    
+  }
+}
+
+
+
+/* =========================================================
+   13. RESPONSIVE (VERY BOTTOM)
+   ========================================================= */
+
+/* ========== DESKTOP ======= */
+
+@media (min-width: 769px) {
+  #top-navbar { display: flex; }
+  .hamburger, #sidebar, #overlay { display: none; }
+  #content { padding-top: 60px; }
+  #themeToggle { top: 12px; right: 20px; }
+}
+
+
+/*========== MOBILE STYLES ======== */
+   
+@media (max-width: 768px) {
+  #top-navbar { display: none !important; } /* MOBILE: HIDE TOP NAVBAR */
+  /*#themeToggle { left: 15px; right: auto; } */ /* WORKING TO SECTION ABOVE */
+  .hamburger { display: block; } /* SHOW HAMBURGER ON MOBILE */ /* re edit needed */
+  .lightbox-nav { display: none; } /* Hide arrows on small screens (swipe instead) */
 }
