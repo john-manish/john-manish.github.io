@@ -1,12 +1,7 @@
 @media (max-width: 768px) {
   #sidebar {
-    width: 75vw;       /* instead of 100% or fixed px */
-    max-width: 300px; /* safety cap for small phones */
-  }
-}
-
-@media (max-width: 768px) {
-  #sidebar nav {
+    width: 68vw;        /* narrower = lighter feel */  /* instead of 100% or fixed px */
+    max-width: 225px;  /* safer for small screens */  /* safety cap for small phones */
     padding-top: 60px;
   }
 }
@@ -17,6 +12,8 @@
     font-size: 18px;
   }
 }
+
+
 
 
 /* New code ends here */

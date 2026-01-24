@@ -72,6 +72,18 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* Flex to push footer down */
+#page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#content {
+  flex: 1; /* THIS is the key */
+}
+
+/* End of Flex to push footer down */
 
 /* Gallery Page Header */
 
@@ -99,6 +111,33 @@ header {
   margin: 40px 0;
 }
 
+
+
+/* Filters */ 
+
+.filters {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: inherit;
+  padding: 6px 14px;
+  margin: 4px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.filter-btn.active {
+  background: var(--border-color);
+}
+
+/* End of Filters */
+
+
 /* Hamburger */
 .hamburger {
   position: fixed;
@@ -121,13 +160,20 @@ header {
   filter: brightness(0.95);
 }
 
-
+/* End of Hamburger */
 
 
 /* Logout Button */
 #logoutBtn {
   position: fixed;
-  top: 55px;
+  /*top: 70px; */ /* Original position */ /* old */
+
+  top: calc(15px + 44px + 10px); /* Below hamburger */ /* new */
+  /*15px → hamburger top
+    44px → hamburger height (approx)
+    10px → desired gap
+  */
+  
   right: 10px;
   padding: 6px 12px;
   border: 1px solid var(--text-color);
@@ -155,6 +201,8 @@ header {
   cursor: pointer;
 }
 
+
+
 /* Sidebar */
 #sidebar {
   position: fixed;
@@ -164,7 +212,8 @@ header {
   max-width: 320px;
   height: 100%;
   background: var(--card-bg);
-   border-left: 3px solid var(--border-color);
+  border-left: 3px solid var(--border-color);
+  font-family: var(--font3);
   padding-top: 80px;
   transition: right 0.3s ease;
   z-index: 1300;
@@ -184,6 +233,53 @@ header {
   background: var(--sidebar-hover-bg);
   color: var(--text);
 }
+
+
+/*End of Sidebar */
+
+
+/* Submenu */
+.has-submenu {
+  width: 100%;
+}
+
+/* Normalize submenu button to match links */
+.submenu-toggle {
+  background: none;
+  border: none;
+  width: 100%;
+  padding: 12px 0;          /* match <a> vertical spacing */
+  font: inherit;
+  color: inherit;
+  text-align: center;       /* THIS fixes alignment */
+  cursor: pointer;
+  display: block;
+}
+
+
+.submenu {
+  display: none;
+  padding-left: 20px;
+}
+
+.submenu a {
+  font-size: 0.95em;
+  opacity: 0.85;
+  font-family: fantasyc, cursive;
+}
+
+
+/* Open state */
+.has-submenu.open .submenu {
+  display: block;
+}
+
+.has-submenu.open .arrow {
+  transform: rotate(180deg);
+}
+
+/* End of submenu */
+
 
 /* Close button */
 .close-btn {
