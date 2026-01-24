@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="Manish Kumar ">
+<link rel="icon" href="img/favicon.jpg">
+<title>Manish -- Gallery</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/gallery.css">
+<link rel="stylesheet" href="css/gallery-mobile.css">
+<script src="js/gallery.js" defer></script>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+<script>
+  if (sessionStorage.getItem("auth") !== "yes") {
+    window.location.replace("pass.html");
+  }
+</script>
+
+
+
+</head>
+
+
+
+<body>
+
+<!-- Top theme toggle -->
+<button id="themeToggle" onclick="toggleTheme()">🌙</button>
+
+
+  
+<!-- Hamburger -->
+<button class="hamburger" onclick="openMenu()">
+  <i class="fa fa-bars"></i>
+</button>
+
+<!-- Sidebar -->
+<nav id="sidebar">
+  <button class="close-btn" onclick="closeMenu()">✕</button>
+
+  <a href="index.html">Home</a>
+  <a href="about-info.html">About</a>
+
+  <!-- Submenu for Photos -->
+
+  <div class="menu-item has-submenu">
+  <button class="submenu-toggle">
+    Photos
+    <span class="arrow">▾</span>
+  </button>
+
+  <div class="submenu">
+    <a href="gallery.html#all">All Photos</a>
+    <a href="gallery.html#portraits">Portraits</a>
+    <a href="gallery.html#travel">Travel</a>
+  </div>
+</div>
+
+<!-- End of Submenu -->
+
+  <a href="Spotify.html">Spotify</a>
+  <a href="blog.html">Blogs</a>
+  <a href="master/contact.html">Contact</a>
+</nav>
+
+<!-- Overlay -->
+<div id="overlay" onclick="closeMenu()"></div>
+
+<!-- !PAGE CONTENT! -->
+
+
+<!-- Header -->
+<header class="page-header">
+  <h1>PHOTOS</h1>
+  <p>My Photographs</p>
+</header>
+
+<!-- Photo Grid -->
+
+<!-- Filters -->
+
+<div class="filters">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="nature">Nature</button>
+  <button class="filter-btn" data-filter="self">Self</button>
+  <button class="filter-btn" data-filter="travel">Travel</button>
+  <button class="filter-btn" data-filter="random">Random</button>
+</div>
+
+<!--End Filters-->
+
+<div class="gallery">
+  <img src="manish-img/manish2.jpg" loading="lazy" data-category="self">
+  <img src="manish-img/manish2.jpg" loading="lazy" data-category="nature">
+  <img src="manish-img/manish3.jpg" loading="lazy" data-category="travel">
+  <img src="manish-img/manish4.jpg" loading="lazy" data-category="random">
+  <img src="manish-img/manish5.jpg" loading="lazy" data-category="nature">
+  <img src="manish-img/manish2.jpg" loading="lazy" data-category="self">
+  <img src="manish-img/manish2.jpg" loading="lazy" data-category="travel">
+  <img src="manish-img/manish2.jpg" loading="lazy" data-category="random">
+  <img src="manish-img/manish3.jpg" loading="lazy" data-category="nature">
+  <img src="manish-img/manish4.jpg" loading="lazy" data-category="travel">
+  <img src="manish-img/manish5.jpg" loading="lazy" data-category="nature">
+  <img src="manish-img/manish2.jpg" loading="lazy" data-category="self">
+  <img src="manish-img/manish3.jpg" loading="lazy" data-category="travel">
+  <img src="manish-img/manish4.jpg" loading="lazy" data-category="random">
+  <img src="manish-img/manish5.jpg" loading="lazy" data-category="nature">
+  <img src="manish-img/manish6.jpg" loading="lazy" data-category="self">
+</div>
+
+<!-- End Page Content -->
+</div>
+
+
+<!-- Logout -->
+
+  <!-- OLD logout Button
+<button id="logoutBtn" onclick="logout()" style="
+  position: fixed;
+  top: 55px;
+  right: 10px; /* moved left to avoid overlap */
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1000;
+">
+Logout
+</button>
+  -->
+
+  <!-- New Button -->
+  <button id="logoutBtn" onclick="logout()">Logout</button>
+
+  
+
+<!-- Footer -->
+ <footer class="site-footer" id="siteFooter">
+  <div class="footer-icons">
+    <a href="#"><i class="fa fa-globe"></i></a>
+    <a href="#"><i class="fa fa-whatsapp"></i></a>
+    <a href="#"><i class="fa fa-envelope"></i></a>
+    <a href="#"><i class="fa fa-telegram"></i></a>
+    <a href="#"><i class="fa fa-instagram"></i></a>
+    <a href="#"><i class="fa fa-snapchat"></i></a>
+    <a href="#"><i class="fa fa-github"></i></a>
+  </div>
+
+ <!-- Footer toggle -->
+<button id="footerToggle" onclick="toggleFooterMode()">🌓 Auto</button>
+
+  <p class="footer-text">
+    copyright <a href="#">2022 Manish (john)</a>.
+  </p>
+</footer>
+ 
+
+
+
+
+
+<!-- Lightbox -->
+<div id="lightbox">
+  <span class="lightbox-close">✕</span>
+
+  <span class="lightbox-nav prev">❮</span>
+  <span class="lightbox-nav next">❯</span>
+
+  <div id="lightbox-counter"></div>
+  <img id="lightbox-img" src="">
+</div>
+
+
+
+
+  
+</body>
+
+</html>
