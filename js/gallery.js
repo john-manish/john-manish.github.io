@@ -25,6 +25,22 @@ function closeMenu() {
   document.getElementById("logoutBtn").style.display = "block";
 }
 
+
+
+// Submenu toggle 
+// Expand and collapse submenu items
+
+document.querySelectorAll(".submenu-toggle").forEach(btn => {
+  btn.addEventListener("click", () => {
+    btn.parentElement.classList.toggle("open");
+  });
+});
+
+
+
+
+
+
 // ===== LOGOUT =====
 // Clears session auth and redirects to password page
 
@@ -290,4 +306,31 @@ images.forEach(img => {
 });
 
 
+
+
+// ===== IMAGE FILTERING =====
+// Filters gallery images based on selected category
+// "All" shows all images
+// Uses data-category attributes for filtering
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+const galleryImages = document.querySelectorAll(".gallery img");
+
+filterButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    // Active button state
+    filterButtons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filter = btn.dataset.filter;
+
+    galleryImages.forEach(img => {
+      if (filter === "all" || img.dataset.category === filter) {
+        img.style.display = "";
+      } else {
+        img.style.display = "none";
+      }
+    });
+  });
+});
 
