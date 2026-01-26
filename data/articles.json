@@ -1,0 +1,35 @@
+[
+  {
+    "id": "school-life-end",
+    "title": "MY SCHOOL LIFE COMES TO AN END",
+    "year": 2022,
+    "date": "17 Nov 22",
+    "timestamp": "2022-11-17",
+    "readTime": "6 min read",
+    "image": "img/ns dav.jpg",
+    "url": "blogpost.html",
+    "tags": ["school", "memories", "life"]
+  },
+  {
+    "id": "last-day-ns-dav",
+    "title": "My Last Day Of NS DAV School",
+    "year": 2022,
+    "date": "17 Nov 22",
+    "timestamp": "2022-11-17",
+    "readTime": "6 min read",
+    "image": "img/old ns dav.png",
+    "url": "last day of dav.html",
+    "tags": ["school", "farewell", "emotions"]
+  },
+  {
+    "id": "vibrant-preparatory",
+    "title": "Vibrant Preparatory School Memories",
+    "year": 2021,
+    "date": "28 Oct 22",
+    "timestamp": "2022-10-28",
+    "readTime": "6 min read",
+    "image": "img/vibrant.jpg",
+    "url": "Vibrant.html",
+    "tags": ["school", "childhood", "memories"]
+  }
+]
