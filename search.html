@@ -3,258 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Core styles -->
     <link rel="stylesheet" href="css/utils.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/mobile.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style new.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/mobile-navbar.css">
+    <link rel="stylesheet" href="css/mobile-search.css">
+
+    <script src="js/articles-loader.js" defer></script>
+    <script src="js/search.js" defer></script>   <!-- search page only -->
+    <script src="js/navbar.js" defer></script>
+
+
+
     <meta name="generator" content="Manish Kumar ">
     <link rel="icon" href="img/favicon.jpg">
-    <title>Manish</title>
+    <title>Search Articles · Manish</title>
 </head>
+
 <body>
-    <nav class="navigation max-width-1 m-auto">
-        <div class="nav-left">
-            <a href="/">
-                <span><img src="img/logo.png" width="94px" alt=""></span>
-            </a>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                
 
-                
-                <div class="dropdown">
-                    <button class="dropbtn"> <a>Pages</a>
-                      <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="dropdown-content">
-                      <a href="blog.html">Blogs</a>
-                      <a href="friends.html">Friends </a>
-                      <a href="gallery.html">Gallery</a>
-                      <a href="Spotify.html">Spotify</a>
-                    </div>
-                  </div>
+<!-- ================= NAVBAR ================= -->
 
-                  <div class="dropdown">
-                    <button class="dropbtn"> <a>About</a>
-                      <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="dropdown-content">
-                      <a href="about-info.html">About 1 - info</a>
-                      <a href="about-cv.html">About 2 - Cv</a>
-                    </div>
-                  </div>
-                  
-                  <li><a href="master/contact.html">Contact</a></li>
-                  
-            </ul>
-        </div>
-        <div class="nav-right">
-            <form action="search.html" method="get">
-                <input class="form-input" type="text" name="query" placeholder="Article Search">
-                <button class="btn">Search</button>
-            </form>
+<header class="navbar">
+  <div class="nav">
 
-        </div>
+    <!-- Left -->
+    <div class="nav-left">
+      <button class="theme-toggle" id="themeToggle">🌙</button>
 
-    </nav>
- 
-
-    <div class="max-width-1 m-auto"><hr></div>
-    <div class="home-articles max-width-1 m-auto font2">
-        
-       <h3 id="searchTitle">Search Results</h3>
-        <p id="resultCount"></p>
-
-<p id="noResult" style="display:none;"> No results found. Try a different keyword.</p>
-
-
-
-<div class="year-box adjust-year">
-
-  <div class="clear-filter-box">
-    <button class="btn" onclick="resetSearch()">Clear Filters</button>
-  </div>
-        
-        
-        
-      
-  <h3>Year</h3>
-
-  <label>
-    <input type="radio" name="year" value="all" checked> All
-  </label>
-
-  <label>
-    <input type="radio" name="year" value="2020"> 2020
-  </label>
-
-  <label>
-    <input type="radio" name="year" value="2021"> 2021
-  </label>
-
-  <label>
-    <input type="radio" name="year" value="2022"> 2022
-  </label>
-</div>
-
-        <div class="home-article" data-title="my school life comes to an end" data-year="2021">
-            <div class="home-article-img">
-                <a href="blogpost.html"> <img src="img/ns dav.jpg" alt="article"> </a>
-            </div>
-            <div class="home-article-content font1">
-                <a href="blogpost.html">
-                    <h3>MY SCHOOL LIFE COMES TO AN END</h3>
-                </a>
-
-                <div>Author Name - Manish</div>
-                <span>17 Nov 22 | 6 min read</span>
-            </div>
-        </div>
-        <div class="home-article" data-title="my last day of ns dav school"  data-year="2021">
-            <div class="home-article-img">
-                <a href="last day of dav.html"> <img src="img/old ns dav.png" alt="article"> </a>
-            </div>
-            <div class="home-article-content font1">
-                <a href="last day of dav.html">
-                    <h3>My Last Day Of NS DAV School</h3>
-                </a>
-
-                <div>Author Name - Manish</div>
-                <span>17 Nov 22 | 6 min read</span>
-            </div>
-        </div>
-        <div class="home-article" data-title="vibrant preparatory school memories" data-year="2020">
-            <div class="home-article-img">
-                <a href="Vibrant.html"> <img src="img/vibrant.jpg" alt="article"></a>
-            </div>
-            <div class="home-article-content font1">
-                <a href="Vibrant.html">
-                    <h3>VIBRANT PREPARATORY SCHOOL MEMORIES</h3>
-                </a>
-
-                <div>Author Name - Manish</div>
-                <span>28 Oct 22 | 6 min read</span>
-            </div>
-        </div>
-      
-
-    <div class="footer">
-        <ul class="copyright">
-            <li>&copy; 2022 Manish (Ms1319-js)</li>
-        </ul>
-         <a href="https://www.vecteezy.com/free-vector/typewriter">Vector Credits: Vecteezy</a> 
+      <div class="nav-search">
+        <button class="search-icon" id="searchToggle">Search</button>
+        <input
+          type="text"
+          id="navSearchInput"
+          placeholder="Search articles..."
+          autocomplete="off"
+        />
+      </div>
     </div>
 
----------------------
-        
-      <script>
-  const params = new URLSearchParams(window.location.search);
-  const query = params.get("query");
+    <!-- Center links -->
+    <nav class="links" id="navLinks">
+      <a href="index.html">Home</a>
 
-  const articles = document.querySelectorAll(".home-article");
-  const title = document.getElementById("searchTitle");
-  const noResult = document.getElementById("noResult");
-  const resultCount = document.getElementById("resultCount");
+      <div class="dropdown">
+        <span class="drop-title">Pages <span class="caret">▾</span></span>
+        <div class="drop-menu">
+          <a href="blog.html">Blogs</a>
+          <a href="friends.html">Friends</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="Spotify.html">Spotify</a>
+        </div>
+      </div>
 
-  if (query) {
-    const lowerQuery = query.toLowerCase();
-    title.innerText = `Search Results for "${query}"`;
+      <div class="dropdown">
+        <span class="drop-title">About <span class="caret">▾</span></span>
+        <div class="drop-menu">
+          <a href="about-info.html">About – Info</a>
+          <a href="about-cv.html">About – CV</a>
+        </div>
+      </div>
 
-    let count = 0;
-    noResult.style.display = "none";
+      <a href="master/contact.html">Contact</a>
+    </nav>
 
-    articles.forEach(article => {
-      const titleEl = article.querySelector("h3");
-      const originalText = titleEl.innerText;
-      const lowerText = originalText.toLowerCase();
+    <!-- Right -->
+    <a href="index.html" class="logo">Manish</a>
 
-      // reset title first (important)
-      titleEl.innerHTML = originalText;
+    <div class="nav-right">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    </div>
 
-      if (lowerText.includes(lowerQuery)) {
-        article.style.display = "flex";
-        count++;
+  </div>
+</header>
 
-        // 🔦 highlight match
-        const regex = new RegExp(`(${query})`, "gi");
-        titleEl.innerHTML = originalText.replace(regex, "<mark>$1</mark>");
-      } else {
-        article.style.display = "none";
-      }
-    });
+ <!-- ================= MAIN ================= -->
 
-    resultCount.innerText = count + " result(s) found";
+ <main class="container">
 
-    if (count === 0) {
-      noResult.style.display = "block";
-    }
-  }
-          
-  // document.getElementById("searchBox")?.focus();
+  <!-- Search Header -->
+  <section class="search-header">
+    <h1 id="searchTitle">Search Results</h1>
+    <p id="resultCount" class="muted"></p>
+    <p id="noResult" class="muted" style="display:none;">
+      No results found. Try a different keyword.
+    </p>
+  </section>
 
-          
-</script>
+ <section class="articles">
 
+  <!-- Header -->
+  <div class="articles-header">
+    <h2>Articles</h2>
 
-<script>
-  const yearRadios = document.querySelectorAll('input[name="year"]');
+    <div class="inline-search">
+  <input
+    type="search"
+    id="pageSearchInput"
+    placeholder="Search articles..."
+    autocomplete="off"
+  />
+    </div>
 
-  function applyYearFilter() {
-    const selectedYear =
-      document.querySelector('input[name="year"]:checked')?.value || "all";
+    <div class="year-filter"></div>
 
-    document.querySelectorAll(".home-article").forEach(article => {
-      const articleYear = article.dataset.year;
+    <div class="tag-scroll"></div>
+    <div class="tag-filter" id="tagFilter"></div>
+    </div>
 
-      if (selectedYear === "all" || articleYear === selectedYear) {
-        article.style.display = "flex";
-      } else {
-        article.style.display = "none";
-      }
-    });
-  }
+  </div>
 
-  yearRadios.forEach(radio =>
-    radio.addEventListener("change", applyYearFilter)
-  );
-</script>
+  <!-- Article -->
 
+    <!-- Skeletons (shown while loading) -->
+  <div id="skeletonContainer">
+    <div class="skeleton-article"></div>
+    <div class="skeleton-article"></div>
+    <div class="skeleton-article"></div>
+  </div>
 
+  <!-- Real articles -->
 
-        
-<script>
- 
+  <!-- Articles will be injected here -->
+  <div id="articlesContainer"></div>
 
-    // show all articles
-    document.querySelectorAll(".home-article").forEach(article => {
-      article.style.display = "flex";
-    });
+</section>
 
-    // reset year to "All"
-    const allYear = document.querySelector('input[name="year"][value="all"]');
-    if (allYear) allYear.checked = true;
+</main>
+      
 
-    // clear result text
-    const title = document.getElementById("searchTitle");
-    const count = document.getElementById("resultCount");
-    const noResult = document.getElementById("noResult");
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-nav">
+    <a class="btn btn-secondary" href="#">← Previous</a>
+    <a class="btn btn-secondary" href="#">Next →</a>
+    </div>
 
-    if (title) title.innerText = "Search Results";
-    if (count) count.innerText = "";
-    if (noResult) noResult.style.display = "none";
-  });
-</script>
+    <p>© 2022 Manish (Ms1319-js)</p>
+    <a href="https://www.vecteezy.com/free-vector/typewriter">
+      Vector Credits: Vecteezy
+    </a>
+  </div>
+</footer>
 
-        
-<script>
-  function resetSearch() {
-    history.replaceState(null, "", window.location.pathname);
-    location.reload();
-  }
-</script>
+<!-- ================= SCRIPTS ================= -->
+
 
 </body>
 </html>
+
+
 
 
 
