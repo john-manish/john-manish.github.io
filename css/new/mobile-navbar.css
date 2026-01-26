@@ -1,0 +1,159 @@
+@media (max-width: 768px) {
+
+    /* =====================================================
+     NAVBAR (USED BY ALL PAGES)
+     👉 You can later move this to mobile-navbar.css
+  ===================================================== */
+
+/* ===== Mobile Navbar Layout ===== */
+.nav {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-left {
+    position: absolute;
+    left: 12px;
+  }
+
+  .nav-right {
+    position: absolute;
+    right: 12px;
+  }
+
+  .logo {
+    margin: 0 auto;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 1.6rem;
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    padding: 0px;
+
+  }
+
+
+  /* For Future Use */
+  /* If using an <i> or <svg> instead of ☰ text directly */
+  /*
+.menu-toggle i,
+.menu-toggle svg {
+  color: var(--text);
+  fill: currentColor;
+}
+ */
+
+
+  .links {
+    position: absolute;
+    top: 56px;
+    right: 10px;
+    background: var(--card);
+    border: 1px solid var(--menu-border);
+    border-radius: 10px;
+    padding: 10px;
+    flex-direction: column;
+    width: 180px;
+    display: none;
+    z-index: 999;
+  }
+
+  .links.show {
+    display: flex;
+  }
+
+
+  .links a {
+     padding: 6px 4px;
+  }
+
+
+  .theme-toggle {
+     margin-top: 6px;
+  }
+
+
+/* Dropdowns inside mobile menu */
+.drop-menu {
+  position: static;
+  border: none;
+  padding-left: 10px;
+}
+
+.drop-menu a {
+  padding: 8px 6px;
+}
+
+.drop-menu.show {
+  display: flex;
+}
+
+.drop-title {
+  padding: 6px 4px;
+}
+
+
+
+
+/* =========================
+   SEARCH PAGE – MOBILE FIX
+   ========================= */
+
+
+/* New Search */ 
+@media (max-width: 768px) {
+
+  /* Keep icon visible */
+  .nav-search {
+    position: static;
+  }
+
+  .search-icon {
+
+    
+  }
+
+
+  /* ===============================
+     SEARCH INPUT
+  =============================== */
+
+  /* Hide input by default */
+  #navSearchInput {
+    position: absolute;
+    top: 100%;               /* 👈 places it under navbar */
+    left: 0;
+    width: 100%;
+    margin-top: 6px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 999;
+  }
+
+  /* When active */
+  .nav-search.active #navSearchInput {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

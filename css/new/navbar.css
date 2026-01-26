@@ -1,0 +1,402 @@
+
+/* =========================================================
+   1. THEME VARIABLES
+========================================================= */
+
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f7f7f7;
+  --bg-hard: #ccc9c9;
+  --bg-tag: #484545a7;
+  --bg-yearbtn: rgba(34, 118, 138, 0.442);
+  --bg-search: rgba(196, 12, 12, 0.767);
+
+  --bg-article:linear-gradient(
+    180deg,
+    rgba(157, 101, 101, 0.284),
+    rgba(255,255,255,0.01)
+  ) ;
+
+  --text: #1a1a1a;
+  --text-muted: #1f1d1d;
+  --tag-text: #f6f0f0 ;
+  --tag-active : #447841 ;
+  --border: #e5e5e5;
+  --border-color: #ddd;
+  --card: #767373;
+
+/* new---*/
+  --accent: #f59e0b; /* warm amber – visible on both */
+
+  --btn-bg: #ffffff;
+  --btn-text: #111111;
+  --btn-border: #323232;
+  --btn-hover: #000;
+  --btn-hover-bg: #111111;
+  --btn-hover-text: #ffffff;
+
+  --menu-border: #a71e1e ;
+  --theme-toggle-border: #1f1d1d ;
+}
+
+[data-theme="dark"] {
+  --bg: #0f1115;
+  --bg-soft: #16181d;
+  --bg-hard: #16181d;
+  --bg-tag: #484545a7;
+  --bg-yearbtn: #156;
+  --bg-search: rgba(255, 255, 255, 0.05);
+
+  --bg-article:linear-gradient(
+    180deg,
+    rgba(55, 54, 54, 0.284),
+    rgba(255,255,255,0.01)
+  ) ;
+  
+  --text: #e6e6e6;
+  --text-muted: #e3dede;
+  --tag-text: #f0f6f0 ;
+  --tag-active : #447841 ;
+  --border: #2a2d35;
+  --border-color: #333;
+  --card: #16181d;
+
+  /* new---*/
+  --accent: #fbbf24; /* slightly brighter for dark */
+
+  --btn-bg: #1e1e1e;
+  --btn-text: #f2f2f2;
+  --btn-border: #b4adad;
+  --btn-hover: #eaeaea;
+  --btn-hover-bg: #ffffff;
+  --btn-hover-text: #111111;
+
+  --menu-border: #a71e1e ;
+  --theme-toggle-border: #ffffff ;
+}
+
+
+/* =========================================================
+   4. NAVBAR CORE
+========================================================= */
+
+/* ===== Simple Navbar ===== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+
+  /* ADD THIS */
+  overflow: visible;
+
+}
+
+
+@supports (backdrop-filter: blur(6px)) {
+
+.navbar {
+  position: sticky;
+  top: 0;
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px); /* Safari */
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+  }
+}
+
+
+.nav {
+  padding: 12px 16px;
+}
+
+
+/* Left & Right control containers */
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  min-width: 40px;
+}
+
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text);
+}
+
+
+
+/* =========================================================
+   5. NAV LINKS
+========================================================= */
+
+
+.links {
+  display: flex;
+  gap: 18px;
+}
+
+.links a {
+  position: relative;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.links a:hover {
+  color: var(--text);
+}
+
+
+.links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--main-bg-color);
+  transition: width 0.25s ease;
+}
+
+.links a:hover::after {
+  width: 100%;
+}
+
+
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.theme-toggle {
+  background: var(--card-bg);
+  border: 1px solid var(--theme-toggle-border);
+  border-radius: 50%;
+  z-index: 1200;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-left: 12px;
+  padding: 8px 10px;
+  color: var(--text);
+}
+
+
+
+/* Smooth transitions */
+.links a,
+.drop-title,
+.drop-menu a {
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+
+/* =========================================================
+   6. DROPDOWNS (DESKTOP FLOATING)
+========================================================= */
+
+/* ===== Dropdown (Desktop) ===== */
+
+.dropdown {
+  position: relative;
+}
+
+.drop-title {
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  user-select: none;
+}
+
+.drop-menu {
+  display: none;            /* IMPORTANT */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  min-width: 160px;
+  flex-direction: column;
+  z-index: 1000;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.drop-menu a {
+  padding: 8px 12px;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.drop-menu a:hover {
+  background: var(--bg-soft);
+}
+
+
+
+.caret {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.dropdown:hover .caret {
+  transform: rotate(180deg);
+}
+
+
+/* Desktop hover */
+@media (min-width: 769px) {
+  .dropdown:hover .drop-menu {
+    display: flex;
+  }
+}
+
+/* =========================================================
+   7. DESKTOP NAVBAR LAYOUT (LOCKED)
+========================================================= */
+
+/* ===== DESKTOP NAVBAR – FINAL LOCK ===== */
+@media (min-width: 769px) {
+  .nav {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+  }
+
+  /* Left */
+  .nav-left {
+    justify-self: start;
+    display: flex;
+  }
+
+  /* Center */
+  .links {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: static;
+  }
+
+  /* Right */
+  .logo {
+    justify-self: end;
+  }
+
+  /* Desktop cleanup */
+  .menu-toggle,
+  .nav-right {
+    display: none;
+  }
+}
+
+
+
+
+/* ===============================
+   NAVBAR SEARCH (LIGHTWEIGHT)
+================================ */
+
+.nav-search {
+  position: relative;
+  margin-left: 10px;
+}
+
+.search-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--theme-toggle-border);
+  border-radius: 50%;
+
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--text);
+
+  transition: all 0.2s ease;
+}
+
+.search-icon:hover {
+  background: var(--bg-soft);
+  transform: scale(1.05);
+}
+
+.search-icon:active {
+  transform: scale(0.95);
+}
+
+
+#navSearchInput {
+  position: absolute;
+  left: 0;
+  top: 120%;
+  width: 180px;
+
+  padding: 8px 10px;
+  font-size: 0.85rem;
+
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: all 0.2s ease;
+
+  z-index: 1500;
+}
+
+/* Placeholder */
+.nav-search input::placeholder {
+  color: var(--text);
+}
+
+
+
+.nav-search.active #navSearchInput {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+
+
+
+
+/* --- Search Text Fix -- */
+.search-icon {
+  font-size: 0.75rem;
+  letter-spacing: 0.4px;
+}
+
+
+
+#searchTitle {
+  margin-bottom: 6px;
+}
+
+#resultCount {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+}
+

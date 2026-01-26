@@ -1,0 +1,142 @@
+
+.tags {
+  margin: 6px 0 10px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+
+  font-size: 0.75rem;
+  border-radius: 999px;
+
+  background: var(--bg-tag);
+  color: var(--tag-text);
+
+  border: 1px solid var(--accent);
+}
+
+
+
+.tag-filter {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.tag-btn {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+
+  background: var(--bg-tag);
+  color: var(--tag-text);
+  border: 1px solid var(--accent);
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tag-btn:hover {
+  background: var(--btn-hover);
+  color: var(--btn-hover-text);
+}
+
+.tag-btn.active {
+  background: var(--tag-active);
+  color: #000;
+}
+
+
+
+
+/* ===============================
+   INLINE SEARCH (ARTICLES HEADER)
+================================ */
+
+.articles-header input[type="text"],
+.articles-header input[type="search"] {
+  background: var(--bg-search);
+  color: #fff;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+
+  padding: 8px 14px;
+  font-size: 0.9rem;
+
+  min-width: 200px;
+  max-width: 240px;
+
+  outline: none;
+
+  outline: none;
+
+  /* Card-like base shadow */
+  box-shadow:
+    0 0 0 0 rgba(245, 200, 75, 0),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Placeholder */
+.articles-header input::placeholder {
+  color: var(--btn-text);
+}
+
+/* ✨ Focus glow */
+
+.articles-header input:focus {
+  background: var(--bg-tag);
+  border-color: #f5c84b;
+
+    box-shadow:
+    0 0 0 4px rgba(233, 9, 203, 0.18),
+    0 0 22px rgba(245, 200, 75, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+
+}
+
+
+
+
+
+/* ===============================
+   Skeleton Loader
+=============================== */
+
+#skeletonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.skeleton-article {
+  height: 140px;
+  border-radius: 16px;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.06) 25%,
+    rgba(255,255,255,0.12) 37%,
+    rgba(255,255,255,0.06) 63%
+  );
+  background-size: 400% 100%;
+  animation: skeleton-loading 1.4s ease infinite;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+
+
+
+

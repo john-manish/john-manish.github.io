@@ -1,0 +1,326 @@
+
+/* =========================================================
+   MOBILE ONLY STYLES
+   Applies to: index new.html + search.html
+   Screen: max-width 768px
+========================================================= */
+
+@media (max-width: 768px) {
+  /* =====================================================
+     GLOBAL SAFETY
+  ===================================================== */
+
+
+
+
+
+  /* =====================================================
+     HERO SECTION (INDEX PAGE ONLY)
+     👉 If needed, move to index-mobile.css later
+  ===================================================== */
+
+/* Mobile */
+
+  .hero {
+    flex-direction: column;
+  
+  }
+
+  .hero-text {
+    max-width: 100%;
+    text-align: left;   /* RESTORE OLD FEEL */
+    padding: 50px;
+  }
+  
+
+  .hero-image {
+     display: none;
+  }
+  
+  .hero-image img {
+    height: 260px;
+  }
+
+
+
+
+/* Mobile */
+
+  /* =====================================================
+     SEARCH PAGE ONLY
+     👉 Safe to move into search.css later
+  ===================================================== */
+
+  /* Article container */
+  .articles {
+    padding: 14px;
+  }
+
+ /* Individual article card */
+  .article {
+    flex-direction: column;
+    padding: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  }
+
+  .article img {
+    
+    width: 100%;
+    height: 160px;          /* 👈 controlled height */
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+
+  .article-content {
+    margin-top: 1px;
+  }
+
+  .article h3 {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .article span {
+    font-size: 0.8rem;
+  }
+
+
+  .article .btn {
+     margin-top: 6px;
+     padding: 6px 14px;
+     font-size: 0.8rem;
+  }
+  
+  
+/* Mobile polish */
+
+
+/* =========================
+   MOBILE YEAR FILTER UX
+   ========================= */
+@media (max-width: 768px) {
+
+  .articles-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+
+  /* ===============================
+     YEAR FILTER (TOP BUTTONS)
+  =============================== */
+
+  .year-filter {
+    justify-content: center;
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;        /* IMPORTANT */
+    padding-bottom: 6px;
+    padding: 8px 4px 10px;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .year-filter::-webkit-scrollbar {
+     height: 4px;
+    display: none; /* Chrome */
+  }
+
+  .year-filter::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+  }
+
+
+  .year-btn {
+    flex-shrink: 0;   /* IMPORTANT */
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    transition: all 0.2s ease;
+  }
+
+  .year-btn.active {
+    background: #f5c842;
+    color: #000;
+    border-color: #f5c842;
+  }
+
+
+
+  .year-filter,
+  .tag-filter {
+    gap: 6px;
+  }
+
+  .year-btn,
+  .tag-btn {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+
+
+  .tag-btn.active {
+    box-shadow: 0 0 0 2px rgba(245, 197, 66, 0.4);
+  }
+
+
+
+
+/* =========================
+    Middle Search
+   ========================= */
+
+
+.inline-search {
+  margin: 12px 0;
+}
+
+.inline-search input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+
+  
+
+  /* ===============================
+     TAG FILTER (FIXED SCROLL AREA ✅)
+  =============================== */
+
+
+
+  /* Outer clip boundary */
+  .tag-scroll {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;        /* ⛔ prevents layout expansion */
+  }
+
+  /* Horizontal scroller */
+  .tag-filter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 6px 4px 10px;
+    gap: 10px;
+
+    touch-action: pan-x;
+    overscroll-behavior-x: contain;
+
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+
+  /* Hide scrollbar but keep scroll */
+
+  .tag-filter::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Individual tags */
+  .tag-filter .tag-btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+
+
+  /* Outer clip boundary */
+  .tag-scroll {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;        /* ⛔ prevents layout expansion */
+  }
+
+  /* Horizontal scroller */
+  .tag-filter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 6px 4px 10px;
+    gap: 10px;
+
+    touch-action: pan-x;
+    overscroll-behavior-x: contain;
+
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .tag-filter::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Individual tags */
+  .tag-filter .tag-btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+
+  /* Reduce space below year filter */
+  .year-filter {
+    margin-bottom: 4px;   /* was probably 12–16px */
+  }
+
+  /* Pull tag filter slightly upward */
+  .tag-scroll {
+    margin-top: -10px;     /* 👈 raises tag row */
+  }
+
+  /* Optional: tighten padding inside tag row */
+  .tag-filter {
+    padding-top: 4px;
+    padding-bottom: 6px;
+  }
+}
+
+
+  
+
+}
+
+
+
+  
+
