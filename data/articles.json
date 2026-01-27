@@ -21,6 +21,28 @@
     "url": "last day of dav.html",
     "tags": ["school", "farewell", "emotions"]
   },
+    {
+    "id": "last-day-ns-dav 1",
+    "title": "My Last Day Of School",
+    "year": 2022,
+    "date": "17 Nov 22",
+    "timestamp": "2022-11-17",
+    "readTime": "6 min read",
+    "image": "img/old ns dav.png",
+    "url": "last day of dav 1.html",
+    "tags": ["school", "farewell", "emotions"]
+  },
+    {
+    "id": "last-day-ns-dav 2",
+    "title": "My Last Day Of NS DAV School",
+    "year": 2022,
+    "date": "17 Nov 22",
+    "timestamp": "2022-11-17",
+    "readTime": "6 min read",
+    "image": "img/old ns dav.png",
+    "url": "last day of dav 2.html",
+    "tags": ["school", "farewell", "emotions"]
+  },
   {
     "id": "vibrant-preparatory",
     "title": "Vibrant Preparatory School Memories",
@@ -33,3 +55,4 @@
     "tags": ["school", "childhood", "memories"]
   }
 ]
+
