@@ -1,0 +1,108 @@
+{
+  "profile": {
+    "name": "Manish Kr",
+    "role": "Student · Web Enthusiast",
+    "location": "Kota, India",
+    "email": "john.manish8090@gmail.com",
+    "website": "https://ms1319js.github.io",
+    "author": "Manish Kumar",
+    "avatar": "img/manish.png"
+  },
+
+  "sections": [
+    {
+      "id": "profession",
+      "title": "Profession",
+      "toggle": true,
+      "defaultOpen": true,
+      "content": {
+        "title": "Student",
+        "period": "2010 – Present",
+        "description": "Learning, experimenting, and building clean, minimal web experiences."
+      }
+    },
+
+    {
+      "id": "education",
+      "title": "Education",
+      "toggle": true,
+      "defaultOpen": true,
+      "items": [
+        {
+          "institute": "GitHub",
+          "period": "Forever",
+          "description": "Self-taught Web Development and open-source learning."
+        },
+        {
+          "institute": "NS DAV Public School",
+          "period": "2016 – 2020",
+          "description": "Primary School (6th – 10th)"
+        },
+        {
+          "institute": "Sacred Heart Public School",
+          "period": "2021 – 2023",
+          "description": "10 + 2 (12th)"
+        },
+        {
+          "institute": "Allen Career Institute",
+          "period": "2021 – 2023",
+          "description": "Coaching"
+        }
+      ]
+    },
+
+    {
+      "id": "projects",
+      "title": "Projects",
+      "toggle": true,
+      "defaultOpen": true,
+      "items": [
+        {
+          "title": "Minimal Personal Website",
+          "link": "https://ms1319js.github.io",
+          "description": "A fast, minimal, and evolving personal website built with clean HTML, CSS, and JavaScript."
+        }
+      ]
+    },
+
+    {
+      "id": "skills",
+      "title": "Skills & Interests",
+      "toggle": true,
+      "defaultOpen": true,
+      "content": {
+        "skills": [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "Git",
+          "Web Design",
+          "Responsive Layouts"
+        ],
+        "languages": [
+          "English",
+          "Hindi"
+        ],
+        "interests": [
+          "Diary Writing",
+          "Listening to Music",
+          "Buddhism",
+          "Minimal Design"
+        ]
+      }
+    },
+
+    {
+      "id": "metrics",
+      "title": "Religion / Beliefs",
+      "toggle": true,
+      "defaultOpen": false,
+      "items": [
+        { "name": "Hinduism", "level": 50 },
+        { "name": "Buddhism", "level": 60 }
+      ]
+    }
+  ],
+
+  "author": "Manish Kr"
+}
