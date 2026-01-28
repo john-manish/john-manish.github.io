@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CORE STYLES (SAME AS ARTICLES) -->
+   
+  <link rel="stylesheet" href="css/new/style.css">
+   <link rel="stylesheet" href="css/new/navbar.css">
+  <link rel="stylesheet" href="css/new/mobile-navbar.css">
+  
+  <!-- PAGE STYLE -->
+  <link rel="stylesheet" href="css/new/about-cv-lite.css">
+
+  <title>About – CV · Manish</title>
+  <link rel="icon" href="img/favicon.jpg">
+
+  <!-- SCRIPTS -->
+  <script src="js/navbar.js" defer></script>
+  <script src="js/about-cv.js" defer></script>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR (SAME AS articles.html) ================= -->
+<header class="navbar">
+  <div class="nav">
+
+    <div class="nav-left">
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+
+      <div class="nav-search">
+        <button class="search-icon" id="searchToggle">Search</button>
+        <input
+          type="text"
+          id="navSearchInput"
+          placeholder="Search articles..."
+          autocomplete="off"
+        />
+      </div>
+    </div>
+
+    <nav class="links" id="navLinks">
+      <a href="index.html">Home</a>
+
+      <div class="dropdown">
+        <span class="drop-title">Pages <span class="caret">▾</span></span>
+        <div class="drop-menu">
+          <a href="blog.html">Blogs</a>
+          <a href="friends.html">Friends</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="Spotify.html">Spotify</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <span class="drop-title">About <span class="caret">▾</span></span>
+        <div class="drop-menu">
+          <a href="about-info.html">About – Info</a>
+          <a href="about-cv.html" class="active">About – CV</a>
+        </div>
+      </div>
+
+      <a href="master/contact.html">Contact</a>
+    </nav>
+
+    <a href="index.html" class="logo">Manish</a>
+
+    <div class="nav-right">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    </div>
+
+  </div>
+</header>
+
+<!-- ================= MAIN ================= -->
+<main class="container">
+
+<section class="cv-wrapper">
+
+  <div class="cv-left-stack">
+
+  <!-- LEFT -->
+  <aside class="cv-left" id="cvProfile"></aside>
+  
+  <!-- OPTIONAL PERSONAL BOX -->
+<aside class="cv-personal" id="cvPersonal"></aside>
+
+   </div>
+
+  <!-- RIGHT -->
+
+  <div class="cv-right-column">
+
+       <section class="cv-right" id="cvContent">
+         <!-- content injected by JS -->
+       </section>
+
+        <section class="cv-right cv-metrics" id="cvMetrics"></section>
+
+  </div>
+
+
+</section>
+
+  
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2022 Manish (Ms1319-js)</p>
+  </div>
+</footer>
+
+</body>
+</html>
