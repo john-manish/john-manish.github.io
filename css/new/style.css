@@ -1,0 +1,288 @@
+
+/* =========================================================
+   2. RESET + BASE
+========================================================= */
+
+
+*, *::before, *::after {
+  
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+
+
+
+
+
+/* =========================================================
+   8. PAGE CONTENT
+========================================================= */
+
+/* ===== Home Content ===== */
+
+.page {
+  max-width: 1100px;   /* same width everywhere */
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+
+.page-title {
+  font-family: var(--font3);
+  text-align: center;
+}
+
+
+/* =========================================================
+   9. RESTORE OLD BODY + PAGE LAYOUT
+========================================================= */
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Main container should not flatten layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 18px;
+}
+
+/* =========================================================
+   10. INDEX // HERO (restore old content section feel)
+========================================================= */
+
+
+.hero {
+  height: auto;
+  position: relative;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  padding: 9px;
+  margin-top: 32px;
+
+  background: var(--bg-soft);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  inset: 0;
+  background-image: url("../img/11.svg");
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 49px;
+  z-index: 1;
+}
+
+.hero-text h3 {
+  font-family: var(--font3);
+  margin-bottom: 14px;
+}
+
+.hero-text p {
+  margin-top: 10px;
+  line-height: 1.7;
+}
+
+
+.hero-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-image img {
+  height: 340px;
+  border-radius: 999px;
+  border: 2px solid black;
+}
+
+
+
+
+/* =========================================================
+   13. BUTTON VARIANTS
+========================================================= */
+
+
+/* ===== Button variants ===== */
+
+/* === Unified Button === */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: 1px solid var(--btn-border);
+
+  transition: background 0.2s ease,
+              color 0.2s ease,
+              border-color 0.2s ease,
+              transform 0.15s ease;
+}
+
+.btn:hover {
+  background: var(--btn-hover-bg);
+  color: var(--btn-hover-text);
+  border-color: var(--btn-hover-bg);
+  transform: translateY(-2px);
+}
+
+
+
+.btn-primary {
+  padding: 8px 14px;
+
+}
+
+
+
+.btn-secondary {
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--btn-border);
+}
+
+
+/* =========================================================
+   14. FOOTER
+========================================================= */
+
+/* ===== FOOTER (fixed & visible in light/dark) ===== */
+
+.site-footer .btn:hover {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+
+
+
+.site-footer {
+  margin-top: auto;
+  padding: 0;                /* IMPORTANT */
+  padding-top: 2rem;
+  background: transparent;   /* IMPORTANT */
+  border-top: none;          /* IMPORTANT */
+
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+
+.site-footer .container {
+  background: var(--bg-hard);
+  border-top: 1px solid var(--border);
+  border-radius: 12px 12px 0 0; /* aligns with articles */
+  padding: 20px 16px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.site-footer p {
+  margin: 10px 0 6px;
+}
+
+.site-footer a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--text);
+}
+
+/* footer buttons */
+.footer-nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto 12px;
+}
+
+
+
+/* HOVER */
+
+
+
+/* For future independent footer buttons */
+/* Footer navigation buttons */
+/*
+footer .btn {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: 1px solid var(--btn-border);
+}
+*/
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   11. MINOR ELEMENTS
+========================================================= */
+
+mark {
+  background: rgba(245, 197, 66, 0.9);
+  color: #000;
+  padding: 0 4px;
+  border-radius: 4px;
+
+  animation: highlightFade 0.25s ease-out;
+}
+
+@keyframes highlightFade {
+  from {
+    background-color: rgba(245, 197, 66, 0);
+  }
+  to {
+    background-color: rgba(245, 197, 66, 0.9);
+  }
+}
+
+
+
+
+

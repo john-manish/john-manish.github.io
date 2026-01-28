@@ -1,0 +1,557 @@
+
+/* =========================================================
+   1. THEME VARIABLES
+========================================================= */
+
+:root {
+
+  --text-author: #000000;
+  --cv-link-left: #00006c; /* emerald green */ 
+  --cv-link-left-hover: #560524;
+  --cv-link-right:#03515d; /* warm amber */ 
+  --cv-link-right-hover: #02752a;
+  --card-cv-right: linear-gradient(
+    180deg,
+    #767373cd,
+    rgba(234, 105, 105, 0.69));
+
+  --card-cv-left: linear-gradient(
+    180deg,
+    #78c95fcd,
+    rgba(48, 46, 46, 0.567)
+  );
+
+  --card-cv-personal: linear-gradient(
+    180deg,
+    #5b85a8a9,
+    rgba(48, 46, 46, 0.567)
+  );
+
+  --metric-fill : linear-gradient(
+    90deg,
+    #000,
+    rgba(38, 227, 28, 0.855)
+  );
+
+
+/* new---*/
+  --accent: #f59e0b; /* warm amber – visible on both */
+}
+
+[data-theme="dark"] {
+
+  
+  --text-author: #e3dede;
+  --cv-link-left: #4ade80; 
+  --cv-link-left: #4ade80; 
+  --cv-link-right:#fbbf24;
+  --cv-link-right:#fbbf24;
+  --card-cv-right: linear-gradient(
+    180deg,
+    #2e2929d3,
+    rgba(255,255,255,0.02));
+
+  --card-cv-left: linear-gradient(
+    180deg,
+    #78c95fa9,
+    rgba(48, 46, 46, 0.567)
+  );
+
+  --card-cv-personal: linear-gradient(
+    180deg,
+    #3a4650a9,
+    rgba(48, 46, 46, 0.567)
+  );
+
+    --metric-fill : linear-gradient(
+    90deg,
+    #0000000b,
+    rgba(55, 126, 51, 0.436)
+  );
+
+  /* new---*/
+  --accent: #fbbf24; /* slightly brighter for dark */
+  
+}
+
+
+
+/* ==================================
+   ABOUT – CV (CLEAN STABLE VERSION)
+   ================================== */
+
+/* ===============================
+   LAYOUT --  GRID
+   =============================== */
+
+.cv-wrapper {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 32px;
+  margin: 40px 0 60px;
+  align-items: start; /* important */
+}
+
+
+/* ===============================
+   GRID PLACEMENT (CORRECT)
+   =============================== */
+
+.cv-left-stack {
+  grid-column: 1;
+}
+
+.cv-right {
+  grid-column: 2;
+}
+
+
+/* ===============================
+   LEFT – PROFILE CARD
+   =============================== */
+
+.cv-left {
+  background: var(--card-cv-left);
+
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+
+  text-align: center;
+  overflow: hidden;
+}
+
+.cv-avatar {
+  width: 100%;
+  max-width: 210px;
+  border-radius: 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.cv-left h2 {
+  font-size: 1.45rem;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.cv-left .muted {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  margin-bottom: 16px;
+}
+
+.cv-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.cv-info li {
+  font-size: 0.9rem;
+  padding: 6px 0;
+  color: var(--text-muted);
+  display: flex;
+  gap: 8px;
+}
+
+
+.cv-info a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+
+
+/* Profile website link (LEFT card) */
+.cv-left .cv-info a {
+  color: var(--cv-link-left); 
+  
+}
+
+.cv-left .cv-info a:hover {
+  color: var(--cv-link-left-hover);
+  text-decoration: underline;
+}
+
+
+/* Project link (RIGHT column) */
+.cv-right .cv-section a {
+  color: var(--cv-link-right);
+  font-weight: 500;
+}
+
+.cv-right .cv-section a:hover {
+  color: var(--cv-link-right-hover);
+  text-decoration: underline;
+}
+
+
+/* ===============================
+   LEFT – PERSONAL SNAPSHOT
+   =============================== */
+
+.cv-personal {
+  margin-top: 24px;
+
+  background: var(--card-cv-personal);
+
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+
+  position: relative;
+  z-index: 1;
+}
+
+/* ===============================
+   SKILLS / CHIPS
+   =============================== */
+
+.chip-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chip-group h4 {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  margin-top: 10px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.cv-author {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: var(--text-author);
+  font-style: italic;
+  opacity: 0.7;
+  text-align: center;
+}
+
+/* ===============================
+   RIGHT – CV CONTENT
+   =============================== */
+
+.cv-right {
+  background: var(--card-cv-right);
+
+  border-radius: 22px;
+  padding: 32px;
+  box-shadow:
+    0 12px 36px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+/* RIGHT CONTENT SHOULD SIZE TO CONTENT */
+#cvContent {
+  height: auto;
+  min-height: unset;
+  align-self: start;
+}
+
+/* Right column should flow naturally */
+.cv-right-column {
+  gap: 32px;
+}
+
+
+.cv-section {
+  margin-bottom: 40px;
+}
+
+.cv-section:last-child {
+  margin-bottom: 0;
+}
+
+.cv-section h3 {
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cv-section h3::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.cv-section p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+
+/* ==================================
+   PREMIUM SECTION DIVIDER
+   ================================== */
+   
+
+.cv-section hr {
+  border: none;
+  height: 1px;
+  background: var(--border);
+  margin: 20px 0;
+
+/* soft premium divider */
+   background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.15),
+    transparent
+  );
+
+  opacity: 0.8;
+}
+
+/* Dark theme refinement */
+[data-theme="dark"] .cv-section hr {
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.12),
+    transparent
+  );
+}
+
+/* Light theme refinement */
+[data-theme="light"] .cv-section hr {
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0,0,0,0.15),
+    transparent
+  );
+}
+
+/* ===== end premium divider ===== */
+
+.cv-section a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ===============================
+   MOBILE (RESET EVERYTHING)
+   =============================== */
+
+@media (max-width: 900px) {
+  .cv-wrapper {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .cv-left,
+  .cv-personal,
+  .cv-right {
+    grid-column: auto;
+    grid-row: auto;
+    position: static;
+  }
+
+  .cv-avatar {
+    max-width: 180px;
+  }
+}
+
+
+
+
+/* ===============================
+   METRICS / FOCUS AREAS (RIGHT COLUMN)
+   =============================== */
+
+/* Container inherits .cv-right styles automatically */
+
+.cv-metrics {
+  margin-top: 20px; /* ensures it stays at the bottom visually */
+}
+
+.metric-item {
+  margin-bottom: 16px;
+}
+
+.metric-item span {
+  display: block;
+  font-size: 0.85rem;
+  opacity: 0.85;
+  margin-bottom: 6px;
+}
+
+.metric-bar {
+  height: 18px;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.metric-fill {
+  height: 100%;
+  background: var(--metric-fill);
+  color: #fff;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+}
+
+
+
+
+
+/* ===============================
+   TOGGLE (JS CONTROLLED)
+   =============================== */
+
+/* ===============================
+   TOGGLE (STABLE & WORKING)
+   =============================== */
+
+/* Header row */
+.toggle-header {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  gap: 10px;
+}
+
+/* Section title */
+.toggle-header h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Accent dot */
+.toggle-header h3::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* Plus icon */
+.toggle-icon {
+  margin-left: auto;
+  font-size: 20px;
+  opacity: 0.7;
+  transition: transform 0.25s ease;
+}
+
+/* Rotate when open */
+.cv-section h3.open .toggle-icon {
+  transform: rotate(45deg);
+}
+
+/* ===== CONTENT ===== */
+
+.toggle-content {
+  overflow: hidden;
+  transition: grid-template-rows 0.3s ease,
+              opacity 0.25s ease;
+}
+
+/* CLOSED STATE */
+.toggle-content.closed {
+  display: none;
+}
+
+/* OPEN STATE */
+.toggle-content.open {
+  display: block;
+  margin-top: 16px;
+}
+
+
+
+
+
+
+/* ===============================
+   PRINT / PDF FRIENDLY MODE
+   =============================== */
+@media print {
+
+  /* Reset background & colors */
+  * {
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #000 !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+
+  /* Single column layout */
+  .cv-wrapper {
+    display: block !important;
+  }
+
+  .cv-left,
+  .cv-right,
+  .cv-right-column {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Expand all toggle sections */
+  .toggle-content {
+    display: block !important;
+  }
+
+  /* Remove toggle icons */
+  .toggle-icon {
+    display: none !important;
+  }
+
+  /* Avoid awkward page breaks */
+  .cv-section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Hide non-essential UI */
+  nav,
+  footer {
+    display: none !important;
+  }
+}
+
+
+
+
+
+
