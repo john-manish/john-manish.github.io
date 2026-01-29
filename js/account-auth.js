@@ -1,26 +1,27 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("signupForm");
+const form = document.getElementById("signupForm");
+const msg = document.getElementById("msg");
 
-  if (!form) {
-    console.error("signupForm not found");
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const username = form.username.value.trim();
+  const email = form.email.value.trim();
+  const password = form.password.value.trim();
+
+  if (!username || !email || !password) {
+    msg.textContent = "All fields are required";
+    msg.className = "error";
     return;
   }
 
-  form.addEventListener("submit", e => {
-    e.preventDefault();
+  // save user locally
+  const user = { username, email, password };
+  localStorage.setItem("user", JSON.stringify(user));
 
-    fetch("https://manish8090101.page.gd/signup.php", {
-      method: "POST",
-      body: new FormData(form)
-    })
-    .then(r => r.json())
-    .then(d => {
-      const msg = document.getElementById("msg");
-      msg.textContent = d.success ? "Account created ✅" : d.error;
-      msg.className = d.success ? "success" : "error";
-    })
-    .catch(err => {
-      console.error(err);
-    });
-  });
+  msg.textContent = "Account created successfully!";
+  msg.className = "success";
+
+  setTimeout(() => {
+    window.location.href = "login.html";
+  }, 1200);
 });
