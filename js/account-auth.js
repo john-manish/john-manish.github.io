@@ -1,27 +1,43 @@
-const form = document.getElementById("signupForm");
-const msg = document.getElementById("msg");
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("signupForm");
+  const msg = document.getElementById("msg");
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+  if (!form) return;
 
-  const username = form.username.value.trim();
-  const email = form.email.value.trim();
-  const password = form.password.value.trim();
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  if (!username || !email || !password) {
-    msg.textContent = "All fields are required";
-    msg.className = "error";
-    return;
-  }
+    msg.textContent = "";
+    msg.className = "";
 
-  // save user locally
-  const user = { username, email, password };
-  localStorage.setItem("user", JSON.stringify(user));
+    const formData = new FormData(form);
 
-  msg.textContent = "Account created successfully!";
-  msg.className = "success";
+    try {
+      const res = await fetch(
+        "https://manish8090101.page.gd/signup.php",
+        {
+          method: "POST",
+          body: formData
+        }
+      );
 
-  setTimeout(() => {
-    window.location.href = "login.html";
-  }, 1200);
+      const text = await res.text();
+
+      if (text.toLowerCase().includes("success")) {
+        msg.textContent = "Account created successfully!";
+        msg.className = "success";
+
+        setTimeout(() => {
+          window.location.href = "login.html";
+        }, 1200);
+      } else {
+        msg.textContent = text;
+        msg.className = "error";
+      }
+
+    } catch (err) {
+      msg.textContent = "Server error. Please try again.";
+      msg.className = "error";
+    }
+  });
 });
