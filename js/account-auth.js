@@ -1,13 +1,26 @@
-document.getElementById("signupForm").addEventListener("submit", e => {
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("signupForm");
 
-  fetch("https://manish8090101.page.gd/signup.php", {
-    method: "POST",
-    body: new FormData(e.target)
-  })
-  .then(r => r.json())
-  .then(d => {
-    document.getElementById("msg").textContent =
-      d.success ? "Account created ✅" : d.error;
+  if (!form) {
+    console.error("signupForm not found");
+    return;
+  }
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+
+    fetch("https://manish8090101.page.gd/signup.php", {
+      method: "POST",
+      body: new FormData(form)
+    })
+    .then(r => r.json())
+    .then(d => {
+      const msg = document.getElementById("msg");
+      msg.textContent = d.success ? "Account created ✅" : d.error;
+      msg.className = d.success ? "success" : "error";
+    })
+    .catch(err => {
+      console.error(err);
+    });
   });
 });
